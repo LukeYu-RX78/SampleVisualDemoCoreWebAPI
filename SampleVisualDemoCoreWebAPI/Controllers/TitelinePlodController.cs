@@ -21,7 +21,7 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
         [Route("GetPlods")]
         public JsonResult GetPlods()
         {
-            string query = "select * from dbo.Plod";
+            string query = "select top 10 * from dbo.plod order by PlodID desc";
             DataTable table = new DataTable();
             string sqlDatasource = _configuration.GetConnectionString("SampleVisualDemoDBConn");
             SqlDataReader sqlReader;

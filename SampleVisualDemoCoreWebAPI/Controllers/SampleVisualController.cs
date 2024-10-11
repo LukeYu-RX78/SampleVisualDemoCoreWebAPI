@@ -46,7 +46,7 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
             return new JsonResult(table);
         }
 
-        //Adding new rows to the notes table
+        //Adding new rows to the StagingRCSamples table
         [HttpPost]
         [Route("AddNewSample")]
         public JsonResult AddNewSample([FromBody] string newSample)

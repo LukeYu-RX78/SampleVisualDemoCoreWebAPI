@@ -40,3 +40,4 @@ C:\Users\LukeYu\Documents\LusProj\SampleVisualDemo\SampleVisualDemoCoreWebAPI\Sa
 C:\Users\LukeYu\Documents\LusProj\SampleVisualDemo\SampleVisualDemoCoreWebAPI\SampleVisualDemoCoreWebAPI\obj\Debug\net8.0\SampleVisualDemoCoreWebAPI.pdb
 C:\Users\LukeYu\Documents\LusProj\SampleVisualDemo\SampleVisualDemoCoreWebAPI\SampleVisualDemoCoreWebAPI\obj\Debug\net8.0\SampleVisualDemoCoreWebAPI.genruntimeconfig.cache
 C:\Users\LukeYu\Documents\LusProj\SampleVisualDemo\SampleVisualDemoCoreWebAPI\SampleVisualDemoCoreWebAPI\obj\Debug\net8.0\ref\SampleVisualDemoCoreWebAPI.dll
+C:\Users\LukeYu\Documents\LusProj\SampleVisualDemo\SampleVisualDemoCoreWebAPI\SampleVisualDemoCoreWebAPI\obj\Debug\net8.0\SampleVisualDemoCoreWebAPI.sourcelink.json

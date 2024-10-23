@@ -44,7 +44,7 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
         [Route("GetStagingPlods")]
         public JsonResult GetStagingPlods()
         {
-            string query = "select * from dbo.StagingTitelinePlod where ContractNo = 'CW2262484_2024' order by PlodDate desc";
+            string query = "select * from dbo.StagingTitelineAppPlod where ContractNo = 'CW2262484_2024' order by PlodDate desc";
             DataTable table = new DataTable();
             string sqlDatasource = _configuration.GetConnectionString("SampleVisualDemoDBConn");
             SqlDataReader sqlReader;
@@ -62,6 +62,32 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
             return new JsonResult(table);
         }
 
+        [HttpGet]
+        [Route("GetStagingPlodsByAuthLv")]
+        public JsonResult GetStagingPlodsByAuthLv(int authLv)
+        {
+            int nextAuthLv = authLv + 1;
+            string ddrApproving = "%DORS-APP-" + authLv.ToString() + "-%";
+            string ddrApproved = "%DORS-APP-" + nextAuthLv.ToString() + "-%";
+            string query = "select * from dbo.StagingTitelinePlod where ContractNo = 'CW2262484_2024' and DataSource like '"+ ddrApproving + "' or DataSource like '" + ddrApproved + "' order by PlodDate desc";
+            DataTable table = new DataTable();
+            string sqlDatasource = _configuration.GetConnectionString("SampleVisualDemoDBConn");
+            SqlDataReader sqlReader;
+            using (SqlConnection conn = new SqlConnection(sqlDatasource))
+            {
+                conn.Open();
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+                    sqlReader = command.ExecuteReader();
+                    table.Load(sqlReader);
+                    sqlReader.Close();
+                    conn.Close();
+                }
+            }
+            return new JsonResult(table);
+        }
+
+
         [HttpPost]
         [Route("AddStagingPlod")]
         public JsonResult AddStagingPlod([FromBody] string newPlod)
@@ -69,7 +95,7 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
             string coulums = "([PlodDate], [PlodShift], [ContractNo], [RigNo], [Department], [Client], [DayType], [Location], "
                 + "[Comments], [MachineHoursFrom], [MachineHoursTo], [TotalMetres], [DrillingHrs], "
                 + "[MetresperDrillingHr], [TotalActivityHrs], [MetresperTotalHr], [VersionNumber], [DataSource])";
-            string query = "insert into dbo.StagingTitelinePlod " + coulums + " Values(" + newPlod + ")";
+            string query = "insert into dbo.StagingTitelineAppPlod " + coulums + " Values(" + newPlod + ")";
             DataTable table = new DataTable();
             string sqlDatasource = _configuration.GetConnectionString("SampleVisualDemoDBConn");
 
@@ -104,7 +130,7 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
                 return new JsonResult("Old or new DataSource cannot be empty");
             }
 
-            string query = "UPDATE dbo.StagingTitelinePlod SET DataSource = @NewDataSource WHERE DataSource = @OldDataSource";
+            string query = "UPDATE dbo.StagingTitelineAppPlod SET DataSource = @NewDataSource WHERE DataSource = @OldDataSource";
 
             List<SqlParameter> parameters = new List<SqlParameter>
             {

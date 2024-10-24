@@ -17,5 +17,6 @@ namespace SampleVisualDemoCoreWebAPI.Models.Entities
         public string? Organization { get; set; }
         public string? Position { get; set; }
         public string? AuthorityLv { get; set; }
+        public string? Superior { get; set; }
     }
 }

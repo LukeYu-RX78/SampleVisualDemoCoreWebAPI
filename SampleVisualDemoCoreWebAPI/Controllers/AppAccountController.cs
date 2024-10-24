@@ -85,15 +85,14 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
                 ContractNo = userRow["ContractNo"].ToString(),
                 Organization = userRow["Organization"].ToString(),
                 Position = userRow["Position"].ToString(),
-                AuthorityLv = userRow["AuthorityLv"].ToString()
+                AuthorityLv = userRow["AuthorityLv"].ToString(),
+                Superior = userRow["Superior"].ToString()
             };
 
             if (user.Password != loginRequest.Password)
             {
                 return Unauthorized(new { message = "Password is incorrect." });
             }
-
-            user.Password = null;
 
             return Ok(user);
         }

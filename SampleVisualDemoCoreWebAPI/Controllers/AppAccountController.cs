@@ -8,11 +8,11 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class LoginController : ControllerBase
+    public class AppAccountController : ControllerBase
     {
         private readonly IConfiguration _configuration;
 
-        public LoginController(IConfiguration configuration)
+        public AppAccountController(IConfiguration configuration)
         {
             _configuration = configuration;
         }

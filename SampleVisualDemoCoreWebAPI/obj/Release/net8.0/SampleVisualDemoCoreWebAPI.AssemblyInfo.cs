@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SampleVisualDemoCoreWebAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+940ac9297d1ed661f75b5af9c4013c6e46af21be")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+19211914077cb0bba8b4103f451d4c0c6557a305")]
 [assembly: System.Reflection.AssemblyProductAttribute("SampleVisualDemoCoreWebAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SampleVisualDemoCoreWebAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5815171C-AEB3-4E21-81A6-75F8ECBFBF1F}|SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI.csproj|c:\\users\\lukeyu\\documents\\lusproj\\samplevisualdemo\\samplevisualdemocorewebapi\\samplevisualdemocorewebapi\\controllers\\appaccountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5815171C-AEB3-4E21-81A6-75F8ECBFBF1F}|SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI.csproj|solutionrelative:samplevisualdemocorewebapi\\controllers\\appaccountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5815171C-AEB3-4E21-81A6-75F8ECBFBF1F}|SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI.csproj|c:\\users\\lukeyu\\documents\\lusproj\\samplevisualdemo\\samplevisualdemocorewebapi\\samplevisualdemocorewebapi\\controllers\\titelineplodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5815171C-AEB3-4E21-81A6-75F8ECBFBF1F}|SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI.csproj|solutionrelative:samplevisualdemocorewebapi\\controllers\\titelineplodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5815171C-AEB3-4E21-81A6-75F8ECBFBF1F}|SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI.csproj|c:\\users\\lukeyu\\documents\\lusproj\\samplevisualdemo\\samplevisualdemocorewebapi\\samplevisualdemocorewebapi\\models\\entities\\appaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5815171C-AEB3-4E21-81A6-75F8ECBFBF1F}|SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI.csproj|solutionrelative:samplevisualdemocorewebapi\\models\\entities\\appaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5815171C-AEB3-4E21-81A6-75F8ECBFBF1F}|SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI.csproj|c:\\users\\lukeyu\\documents\\lusproj\\samplevisualdemo\\samplevisualdemocorewebapi\\samplevisualdemocorewebapi\\controllers\\titelinelookupscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -13,6 +21,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{5815171C-AEB3-4E21-81A6-75F8ECBFBF1F}|SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI.csproj|c:\\users\\lukeyu\\documents\\lusproj\\samplevisualdemo\\samplevisualdemocorewebapi\\samplevisualdemocorewebapi\\models\\entities\\drillreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5815171C-AEB3-4E21-81A6-75F8ECBFBF1F}|SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI.csproj|solutionrelative:samplevisualdemocorewebapi\\models\\entities\\drillreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5815171C-AEB3-4E21-81A6-75F8ECBFBF1F}|SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI.csproj|c:\\users\\lukeyu\\documents\\lusproj\\samplevisualdemo\\samplevisualdemocorewebapi\\samplevisualdemocorewebapi\\models\\entities\\plod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5815171C-AEB3-4E21-81A6-75F8ECBFBF1F}|SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI.csproj|solutionrelative:samplevisualdemocorewebapi\\models\\entities\\plod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5815171C-AEB3-4E21-81A6-75F8ECBFBF1F}|SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI.csproj|c:\\users\\lukeyu\\documents\\lusproj\\samplevisualdemo\\samplevisualdemocorewebapi\\samplevisualdemocorewebapi\\models\\entities\\stagingplod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5815171C-AEB3-4E21-81A6-75F8ECBFBF1F}|SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI.csproj|solutionrelative:samplevisualdemocorewebapi\\models\\entities\\stagingplod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5815171C-AEB3-4E21-81A6-75F8ECBFBF1F}|SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI.csproj|c:\\users\\lukeyu\\documents\\lusproj\\samplevisualdemo\\samplevisualdemocorewebapi\\samplevisualdemocorewebapi\\controllers\\samplevisualcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -48,11 +64,11 @@
         },
         {
           "DockedWidth": 341,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Program.cs",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Program.cs",
@@ -61,51 +77,102 @@
               "ViewState": "AQIAABIAAAAAAAAAAAAAACUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-24T01:05:36.96Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "AppAccount.cs",
+              "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Models\\Entities\\AppAccount.cs",
+              "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Models\\Entities\\AppAccount.cs",
+              "ToolTip": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Models\\Entities\\AppAccount.cs",
+              "RelativeToolTip": "SampleVisualDemoCoreWebAPI\\Models\\Entities\\AppAccount.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-24T01:02:52.272Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "StagingPlod.cs",
+              "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Models\\Entities\\StagingPlod.cs",
+              "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Models\\Entities\\StagingPlod.cs",
+              "ToolTip": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Models\\Entities\\StagingPlod.cs",
+              "RelativeToolTip": "SampleVisualDemoCoreWebAPI\\Models\\Entities\\StagingPlod.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-24T00:58:40.157Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Plod.cs",
+              "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Models\\Entities\\Plod.cs",
+              "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Models\\Entities\\Plod.cs",
+              "ToolTip": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Models\\Entities\\Plod.cs",
+              "RelativeToolTip": "SampleVisualDemoCoreWebAPI\\Models\\Entities\\Plod.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-24T00:48:19.24Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppAccountController.cs",
+              "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Controllers\\AppAccountController.cs",
+              "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Controllers\\AppAccountController.cs",
+              "ToolTip": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Controllers\\AppAccountController.cs",
+              "RelativeToolTip": "SampleVisualDemoCoreWebAPI\\Controllers\\AppAccountController.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAvwDEAAABXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-24T00:28:39.968Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "DrillReport.cs",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Models\\Entities\\DrillReport.cs",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Models\\Entities\\DrillReport.cs",
               "ToolTip": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Models\\Entities\\DrillReport.cs",
               "RelativeToolTip": "SampleVisualDemoCoreWebAPI\\Models\\Entities\\DrillReport.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAIwAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-23T04:33:16.622Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "TitelineLookupsController.cs",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Controllers\\TitelineLookupsController.cs",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Controllers\\TitelineLookupsController.cs",
               "ToolTip": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Controllers\\TitelineLookupsController.cs",
               "RelativeToolTip": "SampleVisualDemoCoreWebAPI\\Controllers\\TitelineLookupsController.cs",
-              "ViewState": "AQIAACoAAAAAAAAAAAAowBQAAAAdAAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwA8AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-21T03:31:22.436Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "TitelinePlodController.cs",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Controllers\\TitelinePlodController.cs",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Controllers\\TitelinePlodController.cs",
               "ToolTip": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Controllers\\TitelinePlodController.cs",
               "RelativeToolTip": "SampleVisualDemoCoreWebAPI\\Controllers\\TitelinePlodController.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAowC0AAAAJAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-21T03:13:37.119Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\appsettings.json",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\appsettings.json",
@@ -113,12 +180,11 @@
               "RelativeToolTip": "SampleVisualDemoCoreWebAPI\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-07-24T01:17:21.367Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-24T01:17:21.367Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Properties\\launchSettings.json",
@@ -126,18 +192,17 @@
               "RelativeToolTip": "SampleVisualDemoCoreWebAPI\\Properties\\launchSettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-07-24T05:12:27.694Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-24T05:12:27.694Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "SampleVisualController.cs",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Controllers\\SampleVisualController.cs",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Controllers\\SampleVisualController.cs",
               "ToolTip": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Controllers\\SampleVisualController.cs",
               "RelativeToolTip": "SampleVisualDemoCoreWebAPI\\Controllers\\SampleVisualController.cs",
-              "ViewState": "AQIAADgAAAAAAAAAAAAwwJQAAAAhAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-24T01:17:08.838Z",
               "EditorCaption": ""

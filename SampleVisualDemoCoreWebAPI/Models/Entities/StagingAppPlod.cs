@@ -1,7 +1,11 @@
-﻿namespace dors_backend.Models.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace dors_backend.Models.Entities
 {
-    public class StagingPlod
+    public class StagingAppPlod
     {
+        [Key]
+        public int Pid { get; set; }
         public string? PlodDate { get; set; }
         public string? PlodShift { get; set; }
         public string? ContractNo { get; set; }
@@ -20,5 +24,8 @@
         public string? MetresperTotalHr { get; set; }
         public string? VersionNumber { get; set; }
         public string? DataSource { get; set; }
+        public string? SourceFrom { get; set; }
+        public string? SendTo { get; set; }
+        public string? ReportState { get; set; }
     }
 }

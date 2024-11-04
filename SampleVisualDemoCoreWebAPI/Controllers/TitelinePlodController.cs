@@ -68,7 +68,7 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
         public JsonResult GetStagingPlodsByAuthLv(int aid)
         {
   
-            string query = "select * from dbo.StagingTitelineAppPlod where SourceFrom = '" + aid.ToString() + "' or SendTo = '" + aid.ToString() + "'";
+            string query = "select * from dbo.StagingTitelineAppPlod where SendTo = '" + aid.ToString() + "' order by ReportState desc, Pid";
             DataTable table = new DataTable();
             string sqlDatasource = _configuration.GetConnectionString("SampleVisualDemoDBConn");
             SqlDataReader sqlReader;
@@ -249,8 +249,16 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
 
                     void AddParameter(string fieldName, object? fieldValue)
                     {
+                        // Use DBNull.Value for NULL or empty strings
+                        if (fieldValue == null || string.IsNullOrEmpty(fieldValue.ToString()))
+                        {
+                            parameters.Add(new SqlParameter($"@{fieldName}", DBNull.Value));
+                        }
+                        else
+                        {
+                            parameters.Add(new SqlParameter($"@{fieldName}", fieldValue));
+                        }
                         setClauses.Add($"{fieldName} = @{fieldName}");
-                        parameters.Add(new SqlParameter($"@{fieldName}", fieldValue ?? DBNull.Value));
                     }
 
                     AddParameter("PlodDate", updatedPlod.PlodDate);
@@ -296,6 +304,7 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
                 return new JsonResult(StatusCodes.Status500InternalServerError, $"An error occurred: {ex.Message}");
             }
         }
+
 
         [HttpDelete]
         [Route("DeleteStagingPlod/{pid}")]

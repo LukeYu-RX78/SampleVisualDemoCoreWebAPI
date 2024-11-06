@@ -134,9 +134,9 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
 
                     string updateQuery;
                     List<SqlParameter> parameters = new List<SqlParameter>
-                    {
-                        new SqlParameter("@Pid", pid)
-                    };
+            {
+                new SqlParameter("@Pid", pid)
+            };
 
                     if (isApprove)
                     {
@@ -149,29 +149,32 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
                             var result = await getSuperiorCmd.ExecuteScalarAsync();
                             superior = result ?? DBNull.Value;
                         }
-                   
+
                         updateQuery = @"
-                            UPDATE dbo.StagingTitelineAppPlod 
-                            SET 
-                                ReportState = ReportState + 2, 
-                                SourceFrom = SendTo, 
-                                SendTo = @SuperiorAid
-                            WHERE 
-                                Pid = @Pid";
+                    UPDATE dbo.StagingTitelineAppPlod 
+                    SET 
+                        ReportState = CASE 
+                            WHEN ReportState % 2 = 1 THEN ReportState + 2 
+                            ELSE ReportState - 1 
+                        END, 
+                        SourceFrom = SendTo, 
+                        SendTo = @SuperiorAid
+                    WHERE 
+                        Pid = @Pid";
                         parameters.Add(new SqlParameter("@SuperiorAid", superior));
                     }
                     else
                     {
                         updateQuery = @"
-                            UPDATE dbo.StagingTitelineAppPlod 
-                            SET 
-                                ReportState = ReportState + 1, 
-                                SourceFrom = SendTo, 
-                                SendTo = SourceFrom
-                            WHERE 
-                                Pid = @Pid";
+                    UPDATE dbo.StagingTitelineAppPlod 
+                    SET 
+                        ReportState = ReportState + 1, 
+                        SourceFrom = SendTo, 
+                        SendTo = SourceFrom
+                    WHERE 
+                        Pid = @Pid";
                     }
-             
+
                     using (SqlCommand updateCmd = new SqlCommand(updateQuery, conn))
                     {
                         updateCmd.Parameters.AddRange(parameters.ToArray());
@@ -189,6 +192,7 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
                 return new JsonResult(StatusCodes.Status500InternalServerError, $"An error occurred: {ex.Message}");
             }
         }
+
 
         [HttpPut]
         [Route("UpdateStagingPlod")]

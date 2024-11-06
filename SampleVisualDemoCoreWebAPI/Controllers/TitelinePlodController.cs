@@ -151,28 +151,31 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
                         }
 
                         updateQuery = @"
-                    UPDATE dbo.StagingTitelineAppPlod 
-                    SET 
-                        ReportState = CASE 
-                            WHEN ReportState % 2 = 1 THEN ReportState + 2 
-                            ELSE ReportState - 1 
-                        END, 
-                        SourceFrom = SendTo, 
-                        SendTo = @SuperiorAid
-                    WHERE 
-                        Pid = @Pid";
+                        UPDATE dbo.StagingTitelineAppPlod 
+                        SET 
+                            ReportState = CASE 
+                                WHEN ReportState % 2 = 1 THEN ReportState + 2 
+                                ELSE ReportState - 1 
+                            END, 
+                            SourceFrom = SendTo, 
+                            SendTo = @SuperiorAid
+                        WHERE 
+                            Pid = @Pid";
                         parameters.Add(new SqlParameter("@SuperiorAid", superior));
                     }
                     else
                     {
                         updateQuery = @"
-                    UPDATE dbo.StagingTitelineAppPlod 
-                    SET 
-                        ReportState = ReportState + 1, 
-                        SourceFrom = SendTo, 
-                        SendTo = SourceFrom
-                    WHERE 
-                        Pid = @Pid";
+                        UPDATE dbo.StagingTitelineAppPlod 
+                        SET 
+                            ReportState = CASE 
+                                WHEN ReportState % 2 = 0 THEN ReportState - 2 
+                                ELSE ReportState + 1 
+                            END, 
+                            SourceFrom = SendTo, 
+                            SendTo = SourceFrom
+                        WHERE 
+                            Pid = @Pid";
                     }
 
                     using (SqlCommand updateCmd = new SqlCommand(updateQuery, conn))

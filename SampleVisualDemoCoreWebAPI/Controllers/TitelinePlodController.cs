@@ -91,11 +91,15 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
         [Route("AddStagingPlod")]
         public JsonResult AddStagingPlod([FromBody] string newPlod)
         {
-            string coulums = "([PlodDate], [PlodShift], [ContractNo], [RigNo], [Department], [Client], [DayType], [Location], "
+            string columns = "([PlodDate], [PlodShift], [ContractNo], [RigNo], [Department], [Client], [DayType], [Location], "
                 + "[Comments], [MachineHoursFrom], [MachineHoursTo], [TotalMetres], [DrillingHrs], [MetresperDrillingHr], "
                 + "[TotalActivityHrs], [MetresperTotalHr], [VersionNumber], [DataSource], [SourceFrom], [SendTo], [ReportState])";
-            string query = "insert into dbo.StagingTitelineAppPlod " + coulums + " Values(" + newPlod + ")";
-            DataTable table = new DataTable();
+
+            string query = $@"
+                INSERT INTO dbo.StagingTitelineAppPlod {columns} 
+                VALUES ({newPlod});
+                SELECT SCOPE_IDENTITY();";
+
             string sqlDatasource = _configuration.GetConnectionString("SampleVisualDemoDBConn");
 
             try
@@ -105,8 +109,16 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
                     conn.Open();
                     using (SqlCommand command = new SqlCommand(query, conn))
                     {
-                        int affectedRows = command.ExecuteNonQuery();
-                        return new JsonResult("Added Successfully");
+                        object result = command.ExecuteScalar();
+                        if (result != null)
+                        {
+                            int insertedId = Convert.ToInt32(result);
+                            return new JsonResult(new { message = "Added Successfully", pid = insertedId });
+                        }
+                        else
+                        {
+                            return new JsonResult("Insertion failed, no ID retrieved.");
+                        }
                     }
                 }
             }
@@ -119,6 +131,7 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
                 return new JsonResult(StatusCodes.Status500InternalServerError, $"An error occurred: {ex.Message}");
             }
         }
+
 
         [HttpPut]
         [Route("UpdateStagingPlodDDRState")]

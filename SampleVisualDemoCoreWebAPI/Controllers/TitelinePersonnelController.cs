@@ -139,10 +139,10 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
         }
 
         [HttpDelete]
-        [Route("DeletePersonnelByPid/{pid}")]
-        public IActionResult DeletePersonnelByPid(int pid)
+        [Route("DeletePersonnelByPid/{perId}")]
+        public IActionResult DeletePersonnelByPid(int perId)
         {
-            string query = "DELETE FROM dbo.StagingTitelineAppPersonnel WHERE Pid = @Pid;";
+            string query = "DELETE FROM dbo.StagingTitelineAppPersonnel WHERE PerId = @PerId;";
 
             string sqlDatasource = _configuration.GetConnectionString("SampleVisualDemoDBConn");
 
@@ -153,17 +153,17 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
                     conn.Open();
                     using (SqlCommand command = new SqlCommand(query, conn))
                     {
-                        command.Parameters.AddWithValue("@Pid", pid);
+                        command.Parameters.AddWithValue("@PerId", perId);
 
                         int rowsAffected = command.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
                         {
-                            return Ok(new { message = $"Personnel records for Pid {pid} deleted successfully." });
+                            return Ok(new { message = $"Personnel records for PerId {perId} deleted successfully." });
                         }
                         else
                         {
-                            return NotFound(new { message = $"No personnel records found for Pid: {pid}" });
+                            return NotFound(new { message = $"No personnel records found for Pid: {perId}" });
                         }
                     }
                 }
@@ -183,21 +183,21 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
                 return BadRequest(new { message = "Invalid personnel data." });
             }
 
+            if (string.IsNullOrEmpty(updatedData.Name) || string.IsNullOrEmpty(updatedData.Hours))
+            {
+                return BadRequest(new { message = "Name and Hours are required fields." });
+            }
+
             string query = @"
             UPDATE dbo.StagingTitelineAppPersonnel 
             SET 
-                PlodDate = @PlodDate,
-                PlodShift = @PlodShift,
-                ContractNo = @ContractNo,
-                RigNo = @RigNo,
                 Position = @Position,
                 Name = @Name,
                 Hours = @Hours,
                 TimeStart = @TimeStart,
                 TimeFinish = @TimeFinish,
                 TravelDay = @TravelDay,
-                SickDay = @SickDay,
-                DataSource = @DataSource
+                SickDay = @SickDay
             WHERE PerId = @PerId;";
 
             string sqlDatasource = _configuration.GetConnectionString("SampleVisualDemoDBConn");
@@ -211,10 +211,6 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
                     {
                         // Bind parameters to prevent SQL injection
                         command.Parameters.AddWithValue("@PerId", perId);
-                        command.Parameters.AddWithValue("@PlodDate", updatedData.PlodDate ?? (object)DBNull.Value);
-                        command.Parameters.AddWithValue("@PlodShift", updatedData.PlodShift ?? (object)DBNull.Value);
-                        command.Parameters.AddWithValue("@ContractNo", updatedData.ContractNo ?? (object)DBNull.Value);
-                        command.Parameters.AddWithValue("@RigNo", updatedData.RigNo ?? (object)DBNull.Value);
                         command.Parameters.AddWithValue("@Position", updatedData.Position ?? (object)DBNull.Value);
                         command.Parameters.AddWithValue("@Name", updatedData.Name ?? (object)DBNull.Value);
                         command.Parameters.AddWithValue("@Hours", updatedData.Hours ?? (object)DBNull.Value);
@@ -222,7 +218,6 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
                         command.Parameters.AddWithValue("@TimeFinish", updatedData.TimeFinish ?? (object)DBNull.Value);
                         command.Parameters.AddWithValue("@TravelDay", updatedData.TravelDay ?? (object)DBNull.Value);
                         command.Parameters.AddWithValue("@SickDay", updatedData.SickDay ?? (object)DBNull.Value);
-                        command.Parameters.AddWithValue("@DataSource", updatedData.DataSource ?? (object)DBNull.Value);
 
                         // Execute the query
                         int rowsAffected = command.ExecuteNonQuery();
@@ -243,7 +238,5 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
                 return StatusCode(500, new { message = $"An error occurred: {ex.Message}" });
             }
         }
-
-
     }
 }

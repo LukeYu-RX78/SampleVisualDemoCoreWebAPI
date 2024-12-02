@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace SampleVisualDemoCoreWebAPI.Controllers
 {
@@ -21,48 +23,56 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
         [Route("GetLookups")]
         public JsonResult GetLookups()
         {
-            string query = "select * from [lookup].[v_DDRValues] where ContractNo = 'CW2262484_2024' order by Category, Value;";
-            DataTable table = new DataTable();
             string sqlDatasource = _configuration.GetConnectionString("SampleVisualDemoDBConn");
-            SqlDataReader sqlReader;
+
+            //Fetch all active contract numbers
+            string getContractsQuery = "SELECT ContractNo FROM Contract WHERE Active = 1;";
+            var contractNumbers = new List<string>();
+
             using (SqlConnection conn = new SqlConnection(sqlDatasource))
             {
                 conn.Open();
-                using (SqlCommand command = new SqlCommand(query, conn))
+                using (SqlCommand cmd = new SqlCommand(getContractsQuery, conn))
+                using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    sqlReader = command.ExecuteReader();
-                    table.Load(sqlReader);
-                    sqlReader.Close();
-                    conn.Close();
+                    while (reader.Read())
+                    {
+                        contractNumbers.Add(reader["ContractNo"].ToString());
+                    }
                 }
             }
 
-
-            var lookupList = new List<dynamic>();
-
-            foreach (DataRow row in table.Rows)
+            //Fetch lookup values for each contract number
+            var allLookups = new List<dynamic>();
+            foreach (var contractNo in contractNumbers)
             {
-                lookupList.Add(new
+                string lookupQuery = $"SELECT * FROM [lookup].[v_DDRValues] WHERE ContractNo = '{contractNo}' ORDER BY Category, Value;";
+                var lookups = new DataTable();
+
+                using (SqlConnection conn = new SqlConnection(sqlDatasource))
                 {
-                    Type = row["Type"].ToString(),
-                    ContractNo = row["ContractNo"].ToString(),
-                    Category = row["Category"].ToString(),
-                    Value = row["Value"].ToString()
-                });
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(lookupQuery, conn))
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        lookups.Load(reader);
+                    }
+                }
+
+                // Group by category for this contract number
+                var groupedLookups = lookups.AsEnumerable()
+                    .GroupBy(row => row["Category"].ToString())
+                    .Select(group => new
+                    {
+                        ContractNo = contractNo,
+                        Category = group.Key,
+                        Values = group.Select(row => row["Value"].ToString()).ToList()
+                    });
+
+                allLookups.AddRange(groupedLookups);
             }
 
-            var groupedLookups = lookupList
-                .GroupBy(l => l.Category)
-                .Select(g => new
-                {
-                        Category = g.Key,
-                        Values = g.Select(x => x.Value).ToList()
-                })
-                .ToList();
-
-            return new JsonResult(groupedLookups);
+            return new JsonResult(allLookups);
         }
     }
-
-
 }

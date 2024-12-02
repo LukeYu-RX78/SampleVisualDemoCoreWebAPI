@@ -101,8 +101,7 @@
               "RelativeToolTip": "SampleVisualDemoCoreWebAPI\\Models\\Entities\\Lookups.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T04:07:37.796Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-02T04:07:37.796Z"
             },
             {
               "$type": "Document",
@@ -127,7 +126,8 @@
               "RelativeToolTip": "SampleVisualDemoCoreWebAPI\\Models\\Entities\\Plod.cs",
               "ViewState": "AQIAABEAAAAAAAAAAAAAwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T00:48:19.24Z"
+              "WhenOpened": "2024-10-24T00:48:19.24Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -162,7 +162,7 @@
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Controllers\\TitelineLookupsController.cs",
               "ToolTip": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Controllers\\TitelineLookupsController.cs",
               "RelativeToolTip": "SampleVisualDemoCoreWebAPI\\Controllers\\TitelineLookupsController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACkAAAARAAAA",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAowFgAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-21T03:31:22.436Z",
               "EditorCaption": ""
@@ -177,8 +177,7 @@
               "RelativeToolTip": "SampleVisualDemoCoreWebAPI\\Models\\Entities\\Personnel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T00:10:50.571Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T00:10:50.571Z"
             },
             {
               "$type": "Document",
@@ -190,8 +189,7 @@
               "RelativeToolTip": "SampleVisualDemoCoreWebAPI\\Models\\Entities\\LoginRequest.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T00:10:06.201Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T00:10:06.201Z"
             },
             {
               "$type": "Document",

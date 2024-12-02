@@ -42,8 +42,18 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
                 }
             }
 
+            //Add the global ContractNo group dynamically
+            var allLookups = new List<dynamic>
+            {
+                new
+                {
+                    ContractNo = "*",
+                    Category = "ContractNo",
+                    Values = contractNumbers
+                }
+            };
+
             //Fetch lookup values for each contract number
-            var allLookups = new List<dynamic>();
             foreach (var contractNo in contractNumbers)
             {
                 string lookupQuery = $"SELECT * FROM [lookup].[v_DDRValues] WHERE ContractNo = '{contractNo}' ORDER BY Category, Value;";
@@ -72,6 +82,7 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
                 allLookups.AddRange(groupedLookups);
             }
 
+            // Step 4: Return the result as JSON
             return new JsonResult(allLookups);
         }
     }

@@ -11,7 +11,7 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
     [ApiController]
     public class TitelinePersonnelController : ControllerBase
     {
-        private readonly IConfiguration _configuration;
+        private IConfiguration _configuration;
 
         public TitelinePersonnelController(IConfiguration configuration)
         {

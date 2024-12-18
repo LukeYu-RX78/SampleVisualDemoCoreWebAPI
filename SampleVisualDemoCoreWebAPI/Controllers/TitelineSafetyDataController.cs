@@ -16,7 +16,6 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
             _configuration = configuration;
         }
 
-        // 1. AddSafetyData - Add multiple rows
         [HttpPost]
         [Route("AddSafetyData")]
         public IActionResult AddSafetyData([FromBody] List<SafetyData> safetyDataList)
@@ -185,6 +184,12 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
         [Route("UpdateSafetyDataBySid/{sid}")]
         public IActionResult UpdateSafetyDataBySid(int sid, [FromBody] SafetyData updatedData)
         {
+
+            if (updatedData == null)
+            {
+                return BadRequest(new { message = "Invalid safety data." });
+            }
+
             string query = @"
                 UPDATE dbo.StagingTitelineAppSafetyData
                 SET JHA = @JHA, SBO = @SBO, Hazards = @Hazards, SWMSReviews = @SWMSReviews, 
@@ -220,9 +225,9 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
                         int rowsAffected = command.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
-                            return Ok($"Safety data with Sid {sid} updated successfully.");
+                            return Ok(new { message = $"Safety data with Sid {sid} updated successfully." });
                         else
-                            return NotFound($"No safety data found for Sid: {sid}");
+                            return NotFound(new { message =  $"No safety data found for Sid: {sid}" });
                     }
                 }
             }

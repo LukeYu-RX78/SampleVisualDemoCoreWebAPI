@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5815171C-AEB3-4E21-81A6-75F8ECBFBF1F}|SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI.csproj|c:\\users\\lukeyu\\documents\\lusproj\\samplevisualdemo\\samplevisualdemocorewebapi\\samplevisualdemocorewebapi\\controllers\\titelinepackingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5815171C-AEB3-4E21-81A6-75F8ECBFBF1F}|SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI.csproj|solutionrelative:samplevisualdemocorewebapi\\controllers\\titelinepackingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5815171C-AEB3-4E21-81A6-75F8ECBFBF1F}|SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI.csproj|c:\\users\\lukeyu\\documents\\lusproj\\samplevisualdemo\\samplevisualdemocorewebapi\\samplevisualdemocorewebapi\\models\\entities\\packing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5815171C-AEB3-4E21-81A6-75F8ECBFBF1F}|SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI.csproj|solutionrelative:samplevisualdemocorewebapi\\models\\entities\\packing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5815171C-AEB3-4E21-81A6-75F8ECBFBF1F}|SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI.csproj|c:\\users\\lukeyu\\documents\\lusproj\\samplevisualdemo\\samplevisualdemocorewebapi\\samplevisualdemocorewebapi\\samplevisualdemocorewebapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{5815171C-AEB3-4E21-81A6-75F8ECBFBF1F}|SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI.csproj|solutionrelative:samplevisualdemocorewebapi\\samplevisualdemocorewebapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
@@ -124,11 +132,11 @@
         },
         {
           "DockedWidth": 341,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "Personnel.cs",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Models\\Entities\\Personnel.cs",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Models\\Entities\\Personnel.cs",
@@ -141,7 +149,33 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TitelinePackingController.cs",
+              "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Controllers\\TitelinePackingController.cs",
+              "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Controllers\\TitelinePackingController.cs",
+              "ToolTip": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Controllers\\TitelinePackingController.cs",
+              "RelativeToolTip": "SampleVisualDemoCoreWebAPI\\Controllers\\TitelinePackingController.cs",
+              "ViewState": "AQIAANMAAAAAAAAAAAAAANcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T04:41:19.633Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Packing.cs",
+              "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Models\\Entities\\Packing.cs",
+              "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Models\\Entities\\Packing.cs",
+              "ToolTip": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Models\\Entities\\Packing.cs",
+              "RelativeToolTip": "SampleVisualDemoCoreWebAPI\\Models\\Entities\\Packing.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-19T04:38:55.346Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "TitelineGroutingController.cs",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Controllers\\TitelineGroutingController.cs",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Controllers\\TitelineGroutingController.cs",
@@ -154,7 +188,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "Casing.cs",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Models\\Entities\\Casing.cs",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Models\\Entities\\Casing.cs",
@@ -166,7 +200,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "DHSurvey.cs",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Models\\Entities\\DHSurvey.cs",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Models\\Entities\\DHSurvey.cs",
@@ -178,7 +212,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "TitelineRigMoveController .cs",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Controllers\\TitelineRigMoveController .cs",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Controllers\\TitelineRigMoveController .cs",
@@ -191,7 +225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "SafetyData.cs",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Models\\Entities\\SafetyData.cs",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Models\\Entities\\SafetyData.cs",
@@ -203,7 +237,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "RigService.cs",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Models\\Entities\\RigService.cs",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Models\\Entities\\RigService.cs",
@@ -215,7 +249,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "SampleVisualDemoCoreWebAPI.csproj",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI.csproj",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI.csproj",
@@ -228,7 +262,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Grouting.cs",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Models\\Entities\\Grouting.cs",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Models\\Entities\\Grouting.cs",
@@ -236,12 +270,11 @@
               "RelativeToolTip": "SampleVisualDemoCoreWebAPI\\Models\\Entities\\Grouting.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T03:32:15.713Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-19T03:32:15.713Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "TitelineTrainingController.cs",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Controllers\\TitelineTrainingController.cs",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Controllers\\TitelineTrainingController.cs",
@@ -254,7 +287,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "TitelineCasingController.cs",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Controllers\\TitelineCasingController.cs",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Controllers\\TitelineCasingController.cs",
@@ -267,7 +300,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "TitelineRigServiceController.cs",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Controllers\\TitelineRigServiceController.cs",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Controllers\\TitelineRigServiceController.cs",
@@ -280,7 +313,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "Training.cs",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Models\\Entities\\Training.cs",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Models\\Entities\\Training.cs",
@@ -292,7 +325,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "TitelineSafetyDataController.cs",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Controllers\\TitelineSafetyDataController.cs",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Controllers\\TitelineSafetyDataController.cs",
@@ -305,7 +338,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "Consumable.cs",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Models\\Entities\\Consumable.cs",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Models\\Entities\\Consumable.cs",
@@ -317,7 +350,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "TitelineBreakdownsController.cs",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Controllers\\TitelineBreakdownsController.cs",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Controllers\\TitelineBreakdownsController.cs",
@@ -330,7 +363,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "StagingAppPlod.cs",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Models\\Entities\\StagingAppPlod.cs",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Models\\Entities\\StagingAppPlod.cs",
@@ -342,7 +375,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "TitelineBitsController.cs",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Controllers\\TitelineBitsController.cs",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Controllers\\TitelineBitsController.cs",
@@ -355,7 +388,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "Bit.cs",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Models\\Entities\\Bit.cs",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Models\\Entities\\Bit.cs",
@@ -367,7 +400,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "TitelineDrillingController.cs",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Controllers\\TitelineDrillingController.cs",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Controllers\\TitelineDrillingController.cs",
@@ -380,7 +413,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "TitelineDHSurveyController.cs",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Controllers\\TitelineDHSurveyController.cs",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Controllers\\TitelineDHSurveyController.cs",
@@ -393,7 +426,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "Breakdowns.cs",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Models\\Entities\\Breakdowns.cs",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Models\\Entities\\Breakdowns.cs",
@@ -405,7 +438,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "TitelineConsumableController.cs",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Controllers\\TitelineConsumableController.cs",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Controllers\\TitelineConsumableController.cs",
@@ -418,7 +451,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "RigMoves.cs",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Models\\Entities\\RigMoves.cs",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Models\\Entities\\RigMoves.cs",
@@ -430,7 +463,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "Activities.cs",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Models\\Entities\\Activities.cs",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Models\\Entities\\Activities.cs",
@@ -442,7 +475,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "TitelineActivityController.cs",
               "DocumentMoniker": "C:\\Users\\LukeYu\\Documents\\LusProj\\SampleVisualDemo\\SampleVisualDemoCoreWebAPI\\SampleVisualDemoCoreWebAPI\\Controllers\\TitelineActivityController.cs",
               "RelativeDocumentMoniker": "SampleVisualDemoCoreWebAPI\\Controllers\\TitelineActivityController.cs",

@@ -132,5 +132,41 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
                 return StatusCode(500, new { message = "An error occurred", error = ex.Message });
             }
         }
+
+        [HttpGet]
+        [Route("GetLivingContracts")]
+        public IActionResult GetLivingContracts()
+        {
+            string query = "SELECT ContractNo FROM Contract WHERE Active = 1;";
+            List<string> contractNumbers = new List<string>();
+            string sqlDatasource = _configuration.GetConnectionString("SampleVisualDemoDBConn");
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(sqlDatasource))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            contractNumbers.Add(reader["ContractNo"].ToString());
+                        }
+                    }
+                }
+
+                if (contractNumbers.Count == 0)
+                {
+                    return NotFound(new { message = "No active contracts found." });
+                }
+
+                return Ok(new { Contracts = contractNumbers });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An error occurred", error = ex.Message });
+            }
+        }
     }
 }

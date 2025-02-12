@@ -85,5 +85,52 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
             // Step 4: Return the result as JSON
             return new JsonResult(allLookups);
         }
+
+        [HttpGet]
+        [Route("GetLookupValues/{contractNo}/{category}")]
+        public IActionResult GetLookupValues(string contractNo, string category)
+        {
+            string query = @"
+                SELECT Value 
+                FROM [lookup].[v_DDRValues] 
+                WHERE ContractNo = @ContractNo 
+                AND Category = @Category
+                ORDER BY Value;";
+
+            List<string> lookupValues = new List<string>();
+            string sqlDatasource = _configuration.GetConnectionString("SampleVisualDemoDBConn");
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(sqlDatasource))
+                {
+                    conn.Open();
+                    using (SqlCommand command = new SqlCommand(query, conn))
+                    {
+                        command.Parameters.AddWithValue("@ContractNo", contractNo);
+                        command.Parameters.AddWithValue("@Category", category);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                lookupValues.Add(reader["Value"].ToString());
+                            }
+                        }
+                    }
+                }
+
+                if (lookupValues.Count == 0)
+                {
+                    return NotFound(new { message = $"No lookup values found for ContractNo: {contractNo}, Category: {category}" });
+                }
+
+                return Ok(new { ContractNo = contractNo, Category = category, Values = lookupValues });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An error occurred", error = ex.Message });
+            }
+        }
     }
 }

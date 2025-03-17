@@ -183,11 +183,6 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
                 return BadRequest(new { message = "Invalid personnel data." });
             }
 
-            if (string.IsNullOrEmpty(updatedData.Name) || string.IsNullOrEmpty(updatedData.Hours))
-            {
-                return BadRequest(new { message = "Name and Hours are required fields." });
-            }
-
             string query = @"
             UPDATE dbo.StagingTitelineAppPersonnel 
             SET 

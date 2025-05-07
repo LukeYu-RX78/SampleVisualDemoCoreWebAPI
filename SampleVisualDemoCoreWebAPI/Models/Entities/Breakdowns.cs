@@ -11,6 +11,7 @@ namespace SampleVisualDemoCoreWebAPI.Models.Entities
         public string? PlodShift { get; set; }
         public string? ContractNo { get; set; }
         public string? RigNo { get; set; }
+        public string? HoleID { get; set; } 
         public string? Type { get; set; }
         public string? TimeStart { get; set; }
         public string? TimeFinish { get; set; }

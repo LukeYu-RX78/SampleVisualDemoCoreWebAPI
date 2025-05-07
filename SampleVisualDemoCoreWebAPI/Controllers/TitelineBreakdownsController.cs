@@ -27,8 +27,8 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
 
             string query = @"
                 INSERT INTO dbo.StagingTitelineAppBreakdowns
-                    ([Pid], [PlodDate], [PlodShift], [ContractNo], [RigNo], [Type], [TimeStart], [TimeFinish], [Hours], [DataSource])
-                VALUES (@Pid, @PlodDate, @PlodShift, @ContractNo, @RigNo, @Type, @TimeStart, @TimeFinish, @Hours, @DataSource);";
+                    ([Pid], [PlodDate], [PlodShift], [ContractNo], [RigNo], [HoleID], [Type], [TimeStart], [TimeFinish], [Hours], [DataSource])
+                VALUES (@Pid, @PlodDate, @PlodShift, @ContractNo, @RigNo, @HoleID, @Type, @TimeStart, @TimeFinish, @Hours, @DataSource);";
 
             string sqlDatasource = _configuration.GetConnectionString("SampleVisualDemoDBConn");
 
@@ -47,6 +47,7 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
                             command.Parameters.AddWithValue("@PlodShift", breakdown.PlodShift ?? (object)DBNull.Value);
                             command.Parameters.AddWithValue("@ContractNo", breakdown.ContractNo ?? (object)DBNull.Value);
                             command.Parameters.AddWithValue("@RigNo", breakdown.RigNo ?? (object)DBNull.Value);
+                            command.Parameters.AddWithValue("@HoleID", breakdown.HoleID ?? (object)DBNull.Value);
                             command.Parameters.AddWithValue("@Type", breakdown.Type ?? (object)DBNull.Value);
                             command.Parameters.AddWithValue("@TimeStart", breakdown.TimeStart ?? (object)DBNull.Value);
                             command.Parameters.AddWithValue("@TimeFinish", breakdown.TimeFinish ?? (object)DBNull.Value);
@@ -76,7 +77,7 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
         {
             string query = @"
                 SELECT 
-                    [Bid], [Pid], [PlodDate], [PlodShift], [ContractNo], [RigNo], [Type], [TimeStart], [TimeFinish], [Hours], [DataSource]
+                    [Bid], [Pid], [PlodDate], [PlodShift], [ContractNo], [RigNo], [HoleID], [Type], [TimeStart], [TimeFinish], [Hours], [DataSource]
                 FROM dbo.StagingTitelineAppBreakdowns
                 WHERE Pid = @Pid;";
 
@@ -112,6 +113,7 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
                         PlodShift = row["PlodShift"].ToString(),
                         ContractNo = row["ContractNo"].ToString(),
                         RigNo = row["RigNo"].ToString(),
+                        HoleID = row["HoleID"].ToString(),
                         Type = row["Type"].ToString(),
                         TimeStart = row["TimeStart"].ToString(),
                         TimeFinish = row["TimeFinish"].ToString(),
@@ -176,6 +178,7 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
             string query = @"
                 UPDATE dbo.StagingTitelineAppBreakdowns
                 SET 
+                    HoleID = @HoleID,
                     Type = @Type,
                     TimeStart = @TimeStart,
                     TimeFinish = @TimeFinish,
@@ -192,6 +195,7 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
                     using (SqlCommand command = new SqlCommand(query, conn))
                     {
                         command.Parameters.AddWithValue("@Bid", bid);
+                        command.Parameters.AddWithValue("@HoleId", updatedData.HoleID ?? (object)DBNull.Value);
                         command.Parameters.AddWithValue("@Type", updatedData.Type ?? (object)DBNull.Value);
                         command.Parameters.AddWithValue("@TimeStart", updatedData.TimeStart ?? (object)DBNull.Value);
                         command.Parameters.AddWithValue("@TimeFinish", updatedData.TimeFinish ?? (object)DBNull.Value);

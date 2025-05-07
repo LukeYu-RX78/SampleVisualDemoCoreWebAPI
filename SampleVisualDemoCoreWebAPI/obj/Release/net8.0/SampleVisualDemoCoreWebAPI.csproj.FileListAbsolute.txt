@@ -89,3 +89,8 @@ C:/Users/LukeYu/Documents/LusProj/SampleVisualDemo/SampleVisualDemoCoreWebAPI/Sa
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/bin/Release/net8.0/publish/appsettings.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/bin/Release/net8.0/publish/SampleVisualDemoCoreWebAPI.deps.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/bin/Release/net8.0/publish/SampleVisualDemoCoreWebAPI.runtimeconfig.json
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/bin/Release/net8.0/publish/publish/web.config
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/bin/Release/net8.0/publish/publish/appsettings.Development.json
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/bin/Release/net8.0/publish/publish/appsettings.json
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/bin/Release/net8.0/publish/publish/SampleVisualDemoCoreWebAPI.deps.json
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/bin/Release/net8.0/publish/publish/SampleVisualDemoCoreWebAPI.runtimeconfig.json

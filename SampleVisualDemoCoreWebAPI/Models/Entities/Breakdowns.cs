@@ -12,6 +12,8 @@ namespace SampleVisualDemoCoreWebAPI.Models.Entities
         public string? ContractNo { get; set; }
         public string? RigNo { get; set; }
         public string? Type { get; set; }
+        public string? TimeStart { get; set; }
+        public string? TimeFinish { get; set; }
         public string? Hours { get; set; }
         public string? DataSource { get; set; }
     }

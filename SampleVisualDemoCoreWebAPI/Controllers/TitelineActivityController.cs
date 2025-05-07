@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Data.SqlClient;
-using System.Collections.Generic;
 using System.Data;
 using SampleVisualDemoCoreWebAPI.Models.Entities;
 
@@ -28,8 +27,8 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
 
             string query = @"
                 INSERT INTO dbo.StagingTitelineAppActivities
-                    ([Pid], [PlodDate], [PlodShift], [ContractNo], [RigNo], [HoleID], [Activity], [Hours], [DataSource])
-                VALUES (@Pid, @PlodDate, @PlodShift, @ContractNo, @RigNo, @HoleID, @Activity, @Hours, @DataSource);";
+                    ([Pid], [PlodDate], [PlodShift], [ContractNo], [RigNo], [HoleID], [Activity], [TimeStart], [TimeFinish], [Hours], [DataSource])
+                VALUES (@Pid, @PlodDate, @PlodShift, @ContractNo, @RigNo, @HoleID, @Activity, @TimeStart, @TimeFinish, @Hours, @DataSource);";
 
             string sqlDatasource = _configuration.GetConnectionString("SampleVisualDemoDBConn");
 
@@ -50,6 +49,8 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
                             command.Parameters.AddWithValue("@RigNo", activity.RigNo ?? (object)DBNull.Value);
                             command.Parameters.AddWithValue("@HoleID", activity.HoleID ?? (object)DBNull.Value);
                             command.Parameters.AddWithValue("@Activity", activity.ActivityName ?? (object)DBNull.Value);
+                            command.Parameters.AddWithValue("@TimeStart", activity.TimeStart ?? (object)DBNull.Value);
+                            command.Parameters.AddWithValue("@TimeFinish", activity.TimeFinish ?? (object)DBNull.Value);
                             command.Parameters.AddWithValue("@Hours", activity.Hours ?? (object)DBNull.Value);
                             command.Parameters.AddWithValue("@DataSource", activity.DataSource ?? (object)DBNull.Value);
 
@@ -76,8 +77,8 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
         {
             string query = @"
                 SELECT 
-                    [Actid], [Pid], [PlodDate], [PlodShift], [ContractNo], [RigNo], 
-                    [HoleID], [Activity], [Hours], [DataSource]
+                    [Actid], [Pid], [PlodDate], [PlodShift], [ContractNo], [RigNo], [HoleID],
+                    [Activity], [TimeStart], [TimeFinish], [Hours], [DataSource]
                 FROM dbo.StagingTitelineAppActivities
                 WHERE Pid = @Pid;";
 
@@ -115,6 +116,8 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
                         RigNo = row["RigNo"].ToString(),
                         HoleID = row["HoleID"].ToString(),
                         ActivityName = row["Activity"].ToString(),
+                        TimeStart = row["TimeStart"].ToString(),
+                        TimeFinish = row["TimeFinish"].ToString(),
                         Hours = row["Hours"].ToString(),
                         DataSource = row["DataSource"].ToString()
                     });
@@ -179,6 +182,8 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
                 SET 
                     HoleID = @HoleID,
                     Activity = @Activity,
+                    TimeStart = @TimeStart,
+                    TimeFinish = @TimeFinish,
                     Hours = @Hours
                 WHERE Actid = @Actid;";
 
@@ -194,6 +199,8 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
                         command.Parameters.AddWithValue("@Actid", actid);
                         command.Parameters.AddWithValue("@HoleID", updatedData.HoleID ?? (object)DBNull.Value);
                         command.Parameters.AddWithValue("@Activity", updatedData.ActivityName ?? (object)DBNull.Value);
+                        command.Parameters.AddWithValue("@TimeStart", updatedData.TimeStart ?? (object)DBNull.Value);
+                        command.Parameters.AddWithValue("@TimeFinish", updatedData.TimeFinish ?? (object)DBNull.Value);
                         command.Parameters.AddWithValue("@Hours", updatedData.Hours ?? (object)DBNull.Value);
 
                         int rowsAffected = command.ExecuteNonQuery();

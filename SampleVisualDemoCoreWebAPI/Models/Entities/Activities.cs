@@ -13,6 +13,8 @@ namespace SampleVisualDemoCoreWebAPI.Models.Entities
         public string? RigNo { get; set; } 
         public string? HoleID { get; set; } 
         public string? ActivityName { get; set; } 
+        public string? TimeStart { get; set; }
+        public string? TimeFinish { get; set; }
         public string? Hours { get; set; } 
         public string? DataSource { get; set; }
     }

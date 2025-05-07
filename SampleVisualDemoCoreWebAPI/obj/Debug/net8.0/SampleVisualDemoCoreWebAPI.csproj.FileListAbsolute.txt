@@ -84,3 +84,8 @@ C:/Users/LukeYu/Documents/LusProj/SampleVisualDemo/SampleVisualDemoCoreWebAPI/Sa
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/obj/Debug/net8.0/SampleVisualDemoCoreWebAPI.pdb
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/obj/Debug/net8.0/SampleVisualDemoCoreWebAPI.genruntimeconfig.cache
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/obj/Debug/net8.0/ref/SampleVisualDemoCoreWebAPI.dll
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/bin/Debug/net8.0/publish/web.config
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/bin/Debug/net8.0/publish/appsettings.Development.json
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/bin/Debug/net8.0/publish/appsettings.json
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/bin/Debug/net8.0/publish/SampleVisualDemoCoreWebAPI.deps.json
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/bin/Debug/net8.0/publish/SampleVisualDemoCoreWebAPI.runtimeconfig.json

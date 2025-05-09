@@ -221,5 +221,70 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
                 return StatusCode(500, $"An error occurred: {ex.Message}");
             }
         }
+
+        [HttpGet]
+        [Route("CalculateTotalActivityHrs/{pid}")]
+        public IActionResult CalculateTotalActivityHrs(int pid)
+        {
+            string sqlDatasource = _configuration.GetConnectionString("SampleVisualDemoDBConn");
+
+            try
+            {
+                double total = 0;
+                using (SqlConnection conn = new SqlConnection(sqlDatasource))
+                {
+                    conn.Open();
+
+                    string query = @"
+                        SELECT 
+                            ISNULL((
+                                SELECT SUM(TRY_CAST(NULLIF(LTRIM(RTRIM(Hours)), '') AS FLOAT))
+                                FROM dbo.StagingTitelineAppActivities
+                                WHERE Pid = @Pid
+                                AND ISNUMERIC(Hours) = 1
+                            ), 0) 
+                            +
+                            ISNULL((
+                                SELECT SUM(TRY_CAST(NULLIF(LTRIM(RTRIM(Hours)), '') AS FLOAT))
+                                FROM dbo.StagingTitelineAppBreakdowns
+                                WHERE Pid = @Pid
+                                AND ISNUMERIC(Hours) = 1
+                            ), 0) AS TotalHours;";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Pid", pid);
+                        object result = cmd.ExecuteScalar();
+                        total = result != DBNull.Value ? Math.Round(Convert.ToDouble(result), 2) : 0;
+                    }
+
+                    // Only update the Plod table if pid > 0
+                    if (pid > 0)
+                    {
+                        string updateQuery = @"
+                            UPDATE dbo.StagingTitelineAppPlod
+                            SET TotalActivityHrs = @Total
+                            WHERE Pid = @Pid;";
+
+                        using (SqlCommand updateCmd = new SqlCommand(updateQuery, conn))
+                        {
+                            updateCmd.Parameters.AddWithValue("@Total", total);
+                            updateCmd.Parameters.AddWithValue("@Pid", pid);
+                            updateCmd.ExecuteNonQuery();
+                        }
+                    }
+
+                    return Ok(new { pid, total_activity_hours = total });
+                }
+            }
+            catch (SqlException ex)
+            {
+                return StatusCode(500, $"SQL error: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error: {ex.Message}");
+            }
+        }
     }
 }

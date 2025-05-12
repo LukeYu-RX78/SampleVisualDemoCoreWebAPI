@@ -65,27 +65,53 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
 
         [HttpGet]
         [Route("GetStagingPlodsByAid")]
-        public JsonResult GetStagingPlodsByAuthLv(int aid)
+        public JsonResult GetStagingPlodsByAid(int aid, bool isApproved)
         {
-  
-            string query = "select * from dbo.StagingTitelineAppPlod where SendTo = '" + aid.ToString() + "' order by ReportState desc, Pid";
+            string query;
+
+            if (isApproved)
+            {
+                query = $@"
+                    SELECT * FROM dbo.StagingTitelineAppPlod 
+                    WHERE SendTo = '{aid}' 
+                    ORDER BY ReportState DESC, Pid";
+            }
+            else
+            {
+                query = $@"
+                    SELECT * FROM dbo.StagingTitelineAppPlod 
+                    WHERE SourceFrom = '{aid}' 
+                    AND TRY_CAST(ReportState AS INT) < 5 
+                    AND TRY_CAST(ReportState AS INT) % 2 = 1 
+                    ORDER BY ReportState DESC, Pid";
+            }
+
             DataTable table = new DataTable();
             string sqlDatasource = _configuration.GetConnectionString("SampleVisualDemoDBConn");
-            SqlDataReader sqlReader;
-            using (SqlConnection conn = new SqlConnection(sqlDatasource))
-            {
-                conn.Open();
-                using (SqlCommand command = new SqlCommand(query, conn))
-                {
-                    sqlReader = command.ExecuteReader();
-                    table.Load(sqlReader);
-                    sqlReader.Close();
-                    conn.Close();
-                }
-            }
-            return new JsonResult(table);
-        }
 
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(sqlDatasource))
+                {
+                    conn.Open();
+                    using (SqlCommand command = new SqlCommand(query, conn))
+                    using (SqlDataReader sqlReader = command.ExecuteReader())
+                    {
+                        table.Load(sqlReader);
+                    }
+                }
+
+                return new JsonResult(table);
+            }
+            catch (SqlException ex)
+            {
+                return new JsonResult($"SQL error occurred: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                return new JsonResult(StatusCodes.Status500InternalServerError, $"An error occurred: {ex.Message}");
+            }
+        }
 
         [HttpPost]
         [Route("AddStagingPlod")]

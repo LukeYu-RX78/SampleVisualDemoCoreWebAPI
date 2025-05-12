@@ -258,7 +258,6 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
                         total = result != DBNull.Value ? Math.Round(Convert.ToDouble(result), 2) : 0;
                     }
 
-                    // Only update the Plod table if pid > 0
                     if (pid > 0)
                     {
                         string updateQuery = @"

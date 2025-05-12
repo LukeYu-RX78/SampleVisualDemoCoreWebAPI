@@ -1,4 +1,5 @@
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/SampleVisualDemoCoreWebAPI
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/web.config
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/web.config
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/web.config
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/web.config
@@ -13,6 +14,10 @@
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/appsettings.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/appsettings.Development.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/appsettings.json
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/appsettings.Development.json
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/appsettings.json
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/SampleVisualDemoCoreWebAPI.deps.json
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/SampleVisualDemoCoreWebAPI.runtimeconfig.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/SampleVisualDemoCoreWebAPI.deps.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/SampleVisualDemoCoreWebAPI.runtimeconfig.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/SampleVisualDemoCoreWebAPI.deps.json

@@ -4,6 +4,8 @@ using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json.Serialization;
 using Microsoft.AspNetCore.Server.Kestrel.Core; // Add this for Kestrel configuration
 //using System.IO;
+using Microsoft.EntityFrameworkCore;
+using SampleVisualDemoCoreWebAPI.Models.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,12 +23,15 @@ builder.WebHost.ConfigureKestrel(options =>
 
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//Json Serializer
+// Register EF Core DbContext
+builder.Services.AddDbContext<DorsDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SampleVisualDemoDBConn")));
+
+// Json Serializer
 builder.Services.AddControllers().AddNewtonsoftJson(options =>
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore).AddNewtonsoftJson(
     options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());

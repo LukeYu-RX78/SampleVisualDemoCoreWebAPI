@@ -11,6 +11,11 @@
     <Content Remove="NewFolder\**" />
     <EmbeddedResource Remove="NewFolder\**" />
     <None Remove="NewFolder\**" />
+
+    <Compile Remove="SampleVisualDemoCoreWebAPI.Tests\**" />
+    <Content Remove="SampleVisualDemoCoreWebAPI.Tests\**" />
+    <EmbeddedResource Remove="SampleVisualDemoCoreWebAPI.Tests\**" />
+    <None Remove="SampleVisualDemoCoreWebAPI.Tests\**" />
   </ItemGroup>
 
   <ItemGroup>

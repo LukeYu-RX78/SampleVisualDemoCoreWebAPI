@@ -43,6 +43,21 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
             return logs;
         }
 
+        // GET: api/TitelineDDRRejectLog/latest-by-pid/5
+        [HttpGet("latest-by-pid/{pid}")]
+        public async Task<ActionResult<DDRRejectLog>> GetLatestLogByPid(int pid)
+        {
+            var log = await _context.DDRRejectLogs
+                .Where(l => l.Pid == pid)
+                .OrderByDescending(l => l.Lid)
+                .FirstOrDefaultAsync();
+
+            if (log == null)
+                return NotFound();
+
+            return log;
+        }
+
         // POST: api/TitelineDDRRejectLog
         [HttpPost]
         public async Task<ActionResult<DDRRejectLog>> AddLog([FromBody] DDRRejectLog log)

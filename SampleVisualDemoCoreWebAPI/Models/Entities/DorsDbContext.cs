@@ -10,7 +10,7 @@ namespace SampleVisualDemoCoreWebAPI.Models.Entities
         }
 
         public DbSet<DDRRejectLog> DDRRejectLogs { get; set; }
-
-        // Add other tables later as needed...
+        public DbSet<AppAccount> AppAccounts { get; set; }
+        public DbSet<Plod> Plods { get; set; }
     }
 }

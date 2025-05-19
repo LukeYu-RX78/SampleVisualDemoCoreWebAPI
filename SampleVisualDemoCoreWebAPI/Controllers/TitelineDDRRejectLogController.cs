@@ -62,8 +62,18 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<DDRRejectLog>> AddLog([FromBody] DDRRejectLog log)
         {
+            // Fetch Plod by Pid
+            var plod = await _context.Plods.FindAsync(log.Pid);
+
+            // Extract and assign SendTo as RollBackTo (if numeric)
+            if (plod != null && int.TryParse(plod.SendTo, out int sendToAid))
+            {
+                log.RollBackTo = sendToAid;
+            }
+
             _context.DDRRejectLogs.Add(log);
             await _context.SaveChangesAsync();
+
             return CreatedAtAction(nameof(GetLogByLid), new { lid = log.Lid }, log);
         }
 

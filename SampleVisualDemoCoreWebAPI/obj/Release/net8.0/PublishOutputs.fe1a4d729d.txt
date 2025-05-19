@@ -11,11 +11,19 @@
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/CodeCoverage/CodeCoverage.config
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/CodeCoverage/Cov_x86.config
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/macos/x64/Cov_x64.config
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/alpine/x64/Cov_x64.config
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/CodeCoverage/amd64/Cov_x64.config
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/CodeCoverage/arm64/Cov_arm64.config
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/CodeCoverage/CodeCoverage.config
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/CodeCoverage/Cov_x86.config
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/macos/x64/Cov_x64.config
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/web.config
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/publish/web.config
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/web.config
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/web.config
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/web.config
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/web.config
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/ubuntu/x64/Cov_x64.config
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/web.config
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/ubuntu/x64/Cov_x64.config
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/web.config
@@ -31,6 +39,7 @@
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/coverlet.collector.deps.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/appsettings.Development.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/appsettings.json
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/coverlet.collector.deps.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/appsettings.Development.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/appsettings.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/appsettings.Development.json
@@ -41,6 +50,10 @@
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/appsettings.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/publish/appsettings.Development.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/publish/appsettings.json
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/appsettings.Development.json
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/appsettings.json
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/SampleVisualDemoCoreWebAPI.deps.json
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/SampleVisualDemoCoreWebAPI.runtimeconfig.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/publish/SampleVisualDemoCoreWebAPI.deps.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/publish/SampleVisualDemoCoreWebAPI.runtimeconfig.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/SampleVisualDemoCoreWebAPI.deps.json
@@ -53,6 +66,8 @@
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/SampleVisualDemoCoreWebAPI.runtimeconfig.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/SampleVisualDemoCoreWebAPI.deps.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/SampleVisualDemoCoreWebAPI.runtimeconfig.json
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/SampleVisualDemoCoreWebAPI.Tests.deps.json
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/SampleVisualDemoCoreWebAPI.Tests.runtimeconfig.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/SampleVisualDemoCoreWebAPI.deps.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/SampleVisualDemoCoreWebAPI.runtimeconfig.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/SampleVisualDemoCoreWebAPI.Tests.deps.json
@@ -66,6 +81,8 @@
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/SampleVisualDemoCoreWebAPI.pdb
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/Azure.Core.dll
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/Azure.Identity.dll
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/BouncyCastle.Cryptography.dll
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/MailKit.dll
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/Microsoft.AspNetCore.JsonPatch.dll
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/Microsoft.Bcl.AsyncInterfaces.dll
@@ -94,6 +111,7 @@
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/Microsoft.OpenApi.dll
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/Microsoft.SqlServer.Server.dll
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/Microsoft.Win32.SystemEvents.dll
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/MimeKit.dll
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/Newtonsoft.Json.dll
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/Newtonsoft.Json.Bson.dll
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/Swashbuckle.AspNetCore.Swagger.dll
@@ -109,6 +127,7 @@
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/System.IO.Pipelines.dll
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/System.Memory.Data.dll
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/System.Runtime.Caching.dll
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/System.Security.Cryptography.Pkcs.dll
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/System.Security.Cryptography.ProtectedData.dll
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/System.Security.Permissions.dll
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/System.Text.Encodings.Web.dll
@@ -129,6 +148,7 @@
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/runtimes/unix/lib/net6.0/System.Drawing.Common.dll
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/runtimes/win/lib/net6.0/System.Drawing.Common.dll
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/runtimes/win/lib/net6.0/System.Runtime.Caching.dll
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/runtimes/win/lib/net6.0/System.Security.Cryptography.ProtectedData.dll
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/runtimes/win/lib/net6.0/System.Windows.Extensions.dll

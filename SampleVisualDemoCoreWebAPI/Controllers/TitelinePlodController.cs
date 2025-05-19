@@ -1,10 +1,7 @@
-﻿using dors_backend.Models.Entities;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.AspNetCore.Mvc;
+using SampleVisualDemoCoreWebAPI.Models.Entities;
 using System.Data;
 using System.Data.SqlClient;
-using System.Text;
 
 namespace SampleVisualDemoCoreWebAPI.Controllers
 {
@@ -238,7 +235,7 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
 
         [HttpPut]
         [Route("UpdateStagingPlod")]
-        public async Task<IActionResult> UpdateStagingPlod([FromBody] StagingAppPlod updatedPlod)
+        public async Task<IActionResult> UpdateStagingPlod([FromBody] Plod updatedPlod)
         {
             if (updatedPlod == null || updatedPlod.Pid <= 0)
             {

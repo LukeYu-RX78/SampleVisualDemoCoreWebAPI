@@ -130,5 +130,40 @@ namespace SampleVisualDemoCoreWebAPI.Tests.Tests
             var result = await controller.GetLogsByPid(100);
             Assert.Single(result.Value);
         }
+
+        [Fact]
+        public async Task GetLatestLogByPid_ShouldReturnLatest_WhenMultipleExist()
+        {
+            var controller = GetControllerWithInMemoryDb(nameof(GetLatestLogByPid_ShouldReturnLatest_WhenMultipleExist));
+
+            var olderLog = new DDRRejectLog
+            {
+                Lid = 1,
+                Pid = 555,
+                RejectedBy = 1,
+                RollBackTo = 0,
+                CreationDateTime = "2025-05-01T10:00:00Z",
+                Message = "Old log"
+            };
+
+            var newerLog = new DDRRejectLog
+            {
+                Lid = 2,
+                Pid = 555,
+                RejectedBy = 2,
+                RollBackTo = 0,
+                CreationDateTime = "2025-05-02T10:00:00Z",
+                Message = "Latest log"
+            };
+
+            await controller.AddLog(olderLog);
+            await controller.AddLog(newerLog);
+
+            var result = await controller.GetLatestLogByPid(555);
+
+            var log = Assert.IsType<DDRRejectLog>(result.Value);
+            Assert.Equal(2, log.Lid);
+            Assert.Equal("Latest log", log.Message);
+        }
     }
 }

@@ -32,12 +32,12 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
             return log;
         }
 
-        // GET: api/TitelineDDRRejectLog/by-pid/5
-        [HttpGet("by-pid/{pid}")]
-        public async Task<ActionResult<IEnumerable<DDRRejectLog>>> GetLogsByPid(int pid)
+        // GET: api/TitelineDDRRejectLog/by-pid-and-aid/5/2
+        [HttpGet("by-pid-and-aid/{pid}/{aid}")]
+        public async Task<ActionResult<IEnumerable<DDRRejectLog>>> GetLogsByPidAndAid(int pid, int aid)
         {
             var logs = await _context.DDRRejectLogs
-                .Where(l => l.Pid == pid)
+                .Where(l => l.Pid == pid && l.RollBackTo == aid)
                 .ToListAsync();
 
             return logs;

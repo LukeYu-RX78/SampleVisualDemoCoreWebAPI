@@ -50,7 +50,7 @@ namespace SampleVisualDemoCoreWebAPI.Tests.Tests
             await controller.AddLog(CreateSampleLog());
 
             var result = await controller.GetAllLogs();
-            Assert.Single(result.Value);
+            Assert.Single(result.Value!);
         }
 
         [Fact]
@@ -62,7 +62,7 @@ namespace SampleVisualDemoCoreWebAPI.Tests.Tests
 
             var result = await controller.GetLogByLid(log.Lid);
             Assert.NotNull(result.Value);
-            Assert.Equal(log.Lid, result.Value.Lid);
+            Assert.Equal(log.Lid, result.Value!.Lid);
         }
 
         [Fact]
@@ -113,22 +113,40 @@ namespace SampleVisualDemoCoreWebAPI.Tests.Tests
         }
 
         [Fact]
-        public async Task GetLogsByPid_ShouldReturnFiltered()
+        public async Task GetLogsByPidAndAid_ShouldReturnFilteredByPidAndAid()
         {
-            var controller = GetControllerWithInMemoryDb(nameof(GetLogsByPid_ShouldReturnFiltered));
-            await controller.AddLog(CreateSampleLog(1));
+            var controller = GetControllerWithInMemoryDb(nameof(GetLogsByPidAndAid_ShouldReturnFilteredByPidAndAid));
+
+            // Matching log
+            await controller.AddLog(new DDRRejectLog
+            {
+                Lid = 1,
+                Pid = 222,
+                RollBackTo = 999,
+                RejectedBy = 10,
+                CreationDateTime = "2025-05-19T10:00:00Z",
+                Message = "Should be found"
+            });
+
+            // Mismatching log
             await controller.AddLog(new DDRRejectLog
             {
                 Lid = 2,
-                Pid = 999, // different pid
-                RejectedBy = 1,
-                RollBackTo = 2,
-                CreationDateTime = "2024-05-01T10:00:00Z",
-                Message = "Different"
+                Pid = 222,
+                RollBackTo = 888,
+                RejectedBy = 11,
+                CreationDateTime = "2025-05-19T10:00:00Z",
+                Message = "Should be ignored"
             });
 
-            var result = await controller.GetLogsByPid(100);
-            Assert.Single(result.Value);
+            var result = await controller.GetLogsByPidAndAid(222, 999);
+
+            var logs = Assert.IsAssignableFrom<IEnumerable<DDRRejectLog>>(result.Value);
+            var logList = logs.ToList();
+
+            Assert.Single(logList);
+            Assert.Equal(999, logList[0].RollBackTo);
+            Assert.Equal("Should be found", logList[0].Message);
         }
 
         [Fact]
@@ -136,7 +154,7 @@ namespace SampleVisualDemoCoreWebAPI.Tests.Tests
         {
             var controller = GetControllerWithInMemoryDb(nameof(GetLatestLogByPid_ShouldReturnLatest_WhenMultipleExist));
 
-            var olderLog = new DDRRejectLog
+            await controller.AddLog(new DDRRejectLog
             {
                 Lid = 1,
                 Pid = 555,
@@ -144,9 +162,9 @@ namespace SampleVisualDemoCoreWebAPI.Tests.Tests
                 RollBackTo = 0,
                 CreationDateTime = "2025-05-01T10:00:00Z",
                 Message = "Old log"
-            };
+            });
 
-            var newerLog = new DDRRejectLog
+            await controller.AddLog(new DDRRejectLog
             {
                 Lid = 2,
                 Pid = 555,
@@ -154,10 +172,7 @@ namespace SampleVisualDemoCoreWebAPI.Tests.Tests
                 RollBackTo = 0,
                 CreationDateTime = "2025-05-02T10:00:00Z",
                 Message = "Latest log"
-            };
-
-            await controller.AddLog(olderLog);
-            await controller.AddLog(newerLog);
+            });
 
             var result = await controller.GetLatestLogByPid(555);
 

@@ -223,8 +223,8 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("CalculateTotalActivityHrs/{pid}")]
-        public IActionResult CalculateTotalActivityHrs(int pid)
+        [Route("CalculateTotalActivityHrs/{pid}/{aid}")]
+        public IActionResult CalculateTotalActivityHrs(int pid, int aid)
         {
             string sqlDatasource = _configuration.GetConnectionString("SampleVisualDemoDBConn");
 
@@ -235,25 +235,29 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
                 {
                     conn.Open();
 
-                    string query = @"
+                    string activityCondition = pid == -1 ? "Pid = @Pid AND DataSource = @Aid" : "Pid = @Pid";
+                    string query = $@"
                         SELECT 
                             ISNULL((
                                 SELECT SUM(TRY_CAST(NULLIF(LTRIM(RTRIM(Hours)), '') AS FLOAT))
                                 FROM dbo.StagingTitelineAppActivities
-                                WHERE Pid = @Pid
+                                WHERE {activityCondition}
                                 AND ISNUMERIC(Hours) = 1
                             ), 0) 
                             +
                             ISNULL((
                                 SELECT SUM(TRY_CAST(NULLIF(LTRIM(RTRIM(Hours)), '') AS FLOAT))
                                 FROM dbo.StagingTitelineAppBreakdowns
-                                WHERE Pid = @Pid
+                                WHERE {activityCondition}
                                 AND ISNUMERIC(Hours) = 1
                             ), 0) AS TotalHours;";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@Pid", pid);
+                        if (pid == -1)
+                            cmd.Parameters.AddWithValue("@Aid", aid);
+
                         object result = cmd.ExecuteScalar();
                         total = result != DBNull.Value ? Math.Round(Convert.ToDouble(result), 2) : 0;
                     }

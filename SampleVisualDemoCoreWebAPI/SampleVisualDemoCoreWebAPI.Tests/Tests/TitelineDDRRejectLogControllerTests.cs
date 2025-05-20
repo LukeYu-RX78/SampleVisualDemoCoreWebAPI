@@ -69,7 +69,6 @@ namespace SampleVisualDemoCoreWebAPI.Tests.Tests
         public async Task GetLogByLid_ShouldReturnNotFound_WhenMissing()
         {
             var controller = GetControllerWithInMemoryDb(nameof(GetLogByLid_ShouldReturnNotFound_WhenMissing));
-
             var result = await controller.GetLogByLid(999);
             Assert.IsType<NotFoundResult>(result.Result);
         }
@@ -113,72 +112,48 @@ namespace SampleVisualDemoCoreWebAPI.Tests.Tests
         }
 
         [Fact]
-        public async Task GetLogsByPidAndAid_ShouldReturnFilteredByPidAndAid()
+        public async Task GetLogsByPidAndAid_ShouldReturnLatestLog_WhenMultipleMatch()
         {
-            var controller = GetControllerWithInMemoryDb(nameof(GetLogsByPidAndAid_ShouldReturnFilteredByPidAndAid));
+            var controller = GetControllerWithInMemoryDb(nameof(GetLogsByPidAndAid_ShouldReturnLatestLog_WhenMultipleMatch));
 
-            // Matching log
+            // Older matching log
             await controller.AddLog(new DDRRejectLog
             {
                 Lid = 1,
                 Pid = 222,
                 RollBackTo = 999,
                 RejectedBy = 10,
-                CreationDateTime = "2025-05-19T10:00:00Z",
-                Message = "Should be found"
+                CreationDateTime = "2025-05-18T10:00:00Z",
+                Message = "Older match"
             });
 
-            // Mismatching log
+            // Newer matching log (should be returned)
             await controller.AddLog(new DDRRejectLog
             {
                 Lid = 2,
                 Pid = 222,
-                RollBackTo = 888,
+                RollBackTo = 999,
                 RejectedBy = 11,
                 CreationDateTime = "2025-05-19T10:00:00Z",
-                Message = "Should be ignored"
+                Message = "Latest match"
+            });
+
+            // Mismatching Aid
+            await controller.AddLog(new DDRRejectLog
+            {
+                Lid = 3,
+                Pid = 222,
+                RollBackTo = 888,
+                RejectedBy = 12,
+                CreationDateTime = "2025-05-19T10:00:00Z",
+                Message = "Wrong Aid"
             });
 
             var result = await controller.GetLogsByPidAndAid(222, 999);
 
-            var logs = Assert.IsAssignableFrom<IEnumerable<DDRRejectLog>>(result.Value);
-            var logList = logs.ToList();
-
-            Assert.Single(logList);
-            Assert.Equal(999, logList[0].RollBackTo);
-            Assert.Equal("Should be found", logList[0].Message);
-        }
-
-        [Fact]
-        public async Task GetLatestLogByPid_ShouldReturnLatest_WhenMultipleExist()
-        {
-            var controller = GetControllerWithInMemoryDb(nameof(GetLatestLogByPid_ShouldReturnLatest_WhenMultipleExist));
-
-            await controller.AddLog(new DDRRejectLog
-            {
-                Lid = 1,
-                Pid = 555,
-                RejectedBy = 1,
-                RollBackTo = 0,
-                CreationDateTime = "2025-05-01T10:00:00Z",
-                Message = "Old log"
-            });
-
-            await controller.AddLog(new DDRRejectLog
-            {
-                Lid = 2,
-                Pid = 555,
-                RejectedBy = 2,
-                RollBackTo = 0,
-                CreationDateTime = "2025-05-02T10:00:00Z",
-                Message = "Latest log"
-            });
-
-            var result = await controller.GetLatestLogByPid(555);
-
             var log = Assert.IsType<DDRRejectLog>(result.Value);
             Assert.Equal(2, log.Lid);
-            Assert.Equal("Latest log", log.Message);
+            Assert.Equal("Latest match", log.Message);
         }
     }
 }

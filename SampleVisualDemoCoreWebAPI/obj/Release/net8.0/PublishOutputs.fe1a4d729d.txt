@@ -29,11 +29,19 @@
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/CodeCoverage/CodeCoverage.config
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/CodeCoverage/Cov_x86.config
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/macos/x64/Cov_x64.config
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/alpine/x64/Cov_x64.config
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/CodeCoverage/amd64/Cov_x64.config
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/CodeCoverage/arm64/Cov_arm64.config
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/CodeCoverage/CodeCoverage.config
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/CodeCoverage/Cov_x86.config
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/macos/x64/Cov_x64.config
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/web.config
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/web.config
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/web.config
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/web.config
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/publish/web.config
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/web.config
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/ubuntu/x64/Cov_x64.config
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/web.config
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/ubuntu/x64/Cov_x64.config
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/web.config
@@ -64,6 +72,7 @@
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/coverlet.collector.deps.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/appsettings.Development.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/appsettings.json
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/coverlet.collector.deps.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/appsettings.Development.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/appsettings.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/publish/appsettings.Development.json
@@ -74,6 +83,10 @@
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/appsettings.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/appsettings.Development.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/appsettings.json
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/appsettings.Development.json
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/appsettings.json
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/SampleVisualDemoCoreWebAPI.deps.json
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/SampleVisualDemoCoreWebAPI.runtimeconfig.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/SampleVisualDemoCoreWebAPI.deps.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/SampleVisualDemoCoreWebAPI.runtimeconfig.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/publish/SampleVisualDemoCoreWebAPI.deps.json
@@ -86,6 +99,8 @@
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/publish/SampleVisualDemoCoreWebAPI.runtimeconfig.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/SampleVisualDemoCoreWebAPI.deps.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/SampleVisualDemoCoreWebAPI.runtimeconfig.json
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/SampleVisualDemoCoreWebAPI.Tests.deps.json
+/Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/publish/SampleVisualDemoCoreWebAPI.Tests.runtimeconfig.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/SampleVisualDemoCoreWebAPI.deps.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/SampleVisualDemoCoreWebAPI.runtimeconfig.json
 /Users/lukeyu/Documents/EarthSQL/SampleVisualDemoCoreWebAPI/SampleVisualDemoCoreWebAPI/publish/publish/publish/publish/publish/publish/SampleVisualDemoCoreWebAPI.Tests.deps.json

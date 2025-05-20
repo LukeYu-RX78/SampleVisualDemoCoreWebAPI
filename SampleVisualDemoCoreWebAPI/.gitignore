@@ -1,0 +1,36 @@
+## Ignore build output
+bin/
+obj/
+publish/
+out/
+*.user
+*.suo
+
+## Ignore build logs
+*.log
+
+## Ignore test results
+TestResults/
+*.vsmdi
+*.vsp
+*.vspx
+*.sap
+
+## Ignore Visual Studio files
+.vscode/
+.vs/
+*.csproj.user
+
+## Ignore Rider files (JetBrains)
+.idea/
+
+## Ignore user secrets and sensitive config
+secrets.json
+*.dbmdl
+*.pfx
+*.key
+*.snk
+
+## Ignore OS/system files
+.DS_Store
+Thumbs.db

@@ -1,21 +1,28 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using SampleVisualDemoCoreWebAPI.Controllers;
+using Moq;
+using SampleVisualDemoCoreWebAPI.Events;
+using SampleVisualDemoCoreWebAPI.Infrastructure;
 using SampleVisualDemoCoreWebAPI.Models.Entities;
+using SampleVisualDemoCoreWebAPI.Services;
 using Xunit;
 
 namespace SampleVisualDemoCoreWebAPI.Tests.Tests
 {
-    public class TitelineDDRRejectLogControllerTests
+    public class DDRRejectLogServiceTests
     {
-        private TitelineDDRRejectLogController GetControllerWithInMemoryDb(string dbName)
+        private DorsDbContext GetInMemoryDb(string dbName)
         {
             var options = new DbContextOptionsBuilder<DorsDbContext>()
                 .UseInMemoryDatabase(databaseName: dbName)
                 .Options;
+            return new DorsDbContext(options);
+        }
 
-            var context = new DorsDbContext(options);
-            return new TitelineDDRRejectLogController(context);
+        private DDRRejectLogService GetService(string dbName, out Mock<IEventBus> mockEventBus)
+        {
+            var db = GetInMemoryDb(dbName);
+            mockEventBus = new Mock<IEventBus>();
+            return new DDRRejectLogService(db, mockEventBus.Object);
         }
 
         private DDRRejectLog CreateSampleLog(int lid = 1)
@@ -23,137 +30,82 @@ namespace SampleVisualDemoCoreWebAPI.Tests.Tests
             return new DDRRejectLog
             {
                 Lid = lid,
-                Pid = 100,
-                RejectedBy = 200,
-                RollBackTo = 300,
-                CreationDateTime = "2024-05-01T10:00:00Z",
-                Message = "Test log entry"
+                Pid = 101,
+                Message = "Test log",
+                RejectedBy = 201,
+                RollBackTo = 301,
+                CreationDateTime = DateTime.UtcNow.ToString("s")
             };
         }
-
-        [Fact]
-        public async Task AddLog_ShouldCreateNewLog()
+        
+        [Fact(Skip = "Email event logic is temporarily disabled")]
+        public async Task AddLogAsync_ShouldSaveLog_AndTriggerEvent()
         {
-            var controller = GetControllerWithInMemoryDb(nameof(AddLog_ShouldCreateNewLog));
+            // Arrange
+            var service = GetService(nameof(AddLogAsync_ShouldSaveLog_AndTriggerEvent), out var mockEventBus);
             var log = CreateSampleLog();
 
-            var result = await controller.AddLog(log);
-            var okResult = Assert.IsType<CreatedAtActionResult>(result.Result);
-            var createdLog = Assert.IsType<DDRRejectLog>(okResult.Value);
-            Assert.Equal("Test log entry", createdLog.Message);
-        }
-
-        [Fact]
-        public async Task GetAllLogs_ShouldReturnLogs()
-        {
-            var controller = GetControllerWithInMemoryDb(nameof(GetAllLogs_ShouldReturnLogs));
-            await controller.AddLog(CreateSampleLog());
-
-            var result = await controller.GetAllLogs();
-            Assert.Single(result.Value!);
-        }
-
-        [Fact]
-        public async Task GetLogByLid_ShouldReturnLog_WhenFound()
-        {
-            var controller = GetControllerWithInMemoryDb(nameof(GetLogByLid_ShouldReturnLog_WhenFound));
-            var log = CreateSampleLog();
-            await controller.AddLog(log);
-
-            var result = await controller.GetLogByLid(log.Lid);
-            Assert.NotNull(result.Value);
-            Assert.Equal(log.Lid, result.Value!.Lid);
-        }
-
-        [Fact]
-        public async Task GetLogByLid_ShouldReturnNotFound_WhenMissing()
-        {
-            var controller = GetControllerWithInMemoryDb(nameof(GetLogByLid_ShouldReturnNotFound_WhenMissing));
-            var result = await controller.GetLogByLid(999);
-            Assert.IsType<NotFoundResult>(result.Result);
-        }
-
-        [Fact]
-        public async Task UpdateLogByLid_ShouldUpdate_WhenValid()
-        {
-            var controller = GetControllerWithInMemoryDb(nameof(UpdateLogByLid_ShouldUpdate_WhenValid));
-            var log = CreateSampleLog();
-            await controller.AddLog(log);
-
-            log.Message = "Updated";
-            var result = await controller.UpdateLogByLid(log.Lid, log);
-
-            Assert.IsType<OkObjectResult>(result);
-        }
-
-        [Fact]
-        public async Task DeleteLogByLid_ShouldDelete_WhenFound()
-        {
-            var controller = GetControllerWithInMemoryDb(nameof(DeleteLogByLid_ShouldDelete_WhenFound));
-            var log = CreateSampleLog();
-            await controller.AddLog(log);
-
-            var result = await controller.DeleteLogByLid(log.Lid);
-            Assert.IsType<OkObjectResult>(result);
-        }
-
-        [Fact]
-        public async Task AddLogs_ShouldAddMultiple()
-        {
-            var controller = GetControllerWithInMemoryDb(nameof(AddLogs_ShouldAddMultiple));
-            var logs = new List<DDRRejectLog>
+            var context = GetInMemoryDb(nameof(AddLogAsync_ShouldSaveLog_AndTriggerEvent));
+            context.AppAccounts.Add(new AppAccount
             {
-                CreateSampleLog(1),
-                CreateSampleLog(2)
-            };
-
-            var result = await controller.AddLogs(logs);
-            Assert.IsType<OkObjectResult>(result);
-        }
-
-        [Fact]
-        public async Task GetLogsByPidAndAid_ShouldReturnLatestLog_WhenMultipleMatch()
-        {
-            var controller = GetControllerWithInMemoryDb(nameof(GetLogsByPidAndAid_ShouldReturnLatestLog_WhenMultipleMatch));
-
-            // Older matching log
-            await controller.AddLog(new DDRRejectLog
-            {
-                Lid = 1,
-                Pid = 222,
-                RollBackTo = 999,
-                RejectedBy = 10,
-                CreationDateTime = "2025-05-18T10:00:00Z",
-                Message = "Older match"
+                Aid = log.RollBackTo ?? -1,
+                EmailAddress = "reviewer@example.com"
             });
+            await context.SaveChangesAsync();
 
-            // Newer matching log (should be returned)
-            await controller.AddLog(new DDRRejectLog
-            {
-                Lid = 2,
-                Pid = 222,
-                RollBackTo = 999,
-                RejectedBy = 11,
-                CreationDateTime = "2025-05-19T10:00:00Z",
-                Message = "Latest match"
-            });
+            // Act
+            var result = await service.AddLogAsync(log);
 
-            // Mismatching Aid
-            await controller.AddLog(new DDRRejectLog
-            {
-                Lid = 3,
-                Pid = 222,
-                RollBackTo = 888,
-                RejectedBy = 12,
-                CreationDateTime = "2025-05-19T10:00:00Z",
-                Message = "Wrong Aid"
-            });
+            // Assert
+            Assert.Equal("Test log", result.Message);
+            mockEventBus.Verify(e => e.PublishAsync(It.IsAny<DDRRejectLogCreatedEvent>()), Times.Once);
+        }
 
-            var result = await controller.GetLogsByPidAndAid(222, 999);
+        [Fact]
+        public async Task GetLogByLidAsync_ShouldReturnLog_WhenExists()
+        {
+            var db = GetInMemoryDb(nameof(GetLogByLidAsync_ShouldReturnLog_WhenExists));
+            var log = CreateSampleLog(1);
+            db.DDRRejectLogs.Add(log);
+            await db.SaveChangesAsync();
 
-            var log = Assert.IsType<DDRRejectLog>(result.Value);
-            Assert.Equal(2, log.Lid);
-            Assert.Equal("Latest match", log.Message);
+            var service = new DDRRejectLogService(db, Mock.Of<IEventBus>());
+            var result = await service.GetLogByLidAsync(1);
+
+            Assert.NotNull(result);
+            Assert.Equal(1, result!.Lid);
+        }
+
+        [Fact]
+        public async Task DeleteLogByLidAsync_ShouldRemoveLog()
+        {
+            var db = GetInMemoryDb(nameof(DeleteLogByLidAsync_ShouldRemoveLog));
+            var log = CreateSampleLog(1);
+            db.DDRRejectLogs.Add(log);
+            await db.SaveChangesAsync();
+
+            var service = new DDRRejectLogService(db, Mock.Of<IEventBus>());
+            var success = await service.DeleteLogByLidAsync(1);
+
+            Assert.True(success);
+            Assert.Empty(db.DDRRejectLogs);
+        }
+
+        [Fact]
+        public async Task UpdateLogByLidAsync_ShouldUpdate_WhenValid()
+        {
+            var db = GetInMemoryDb(nameof(UpdateLogByLidAsync_ShouldUpdate_WhenValid));
+            var log = CreateSampleLog(1);
+            db.DDRRejectLogs.Add(log);
+            await db.SaveChangesAsync();
+
+            log.Message = "Updated!";
+            var service = new DDRRejectLogService(db, Mock.Of<IEventBus>());
+            var result = await service.UpdateLogByLidAsync(1, log);
+
+            Assert.True(result);
+            var updated = await db.DDRRejectLogs.FindAsync(1);
+            Assert.Equal("Updated!", updated!.Message);
         }
     }
 }

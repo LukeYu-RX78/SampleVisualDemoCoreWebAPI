@@ -6,6 +6,10 @@ using Microsoft.AspNetCore.Server.Kestrel.Core; // Add this for Kestrel configur
 //using System.IO;
 using Microsoft.EntityFrameworkCore;
 using SampleVisualDemoCoreWebAPI.Models.Entities;
+using SampleVisualDemoCoreWebAPI.Interfaces;
+using SampleVisualDemoCoreWebAPI.Services;
+using SampleVisualDemoCoreWebAPI.Events;
+using SampleVisualDemoCoreWebAPI.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +34,15 @@ builder.Services.AddSwaggerGen();
 // Register EF Core DbContext
 builder.Services.AddDbContext<DorsDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("SampleVisualDemoDBConn")));
+
+// Register business service layer
+builder.Services.AddScoped<IDDRRejectLogService, DDRRejectLogService>();
+
+// Register event-driven components
+builder.Services.AddScoped<IEventBus, InMemoryEventBus>();
+builder.Services.AddScoped<IEmailService, MailKitEmailService>();
+builder.Services.AddScoped<IEventHandler<DDRRejectLogCreatedEvent>, DDRRejectLogEmailHandler>();
+
 
 // Json Serializer
 builder.Services.AddControllers().AddNewtonsoftJson(options =>

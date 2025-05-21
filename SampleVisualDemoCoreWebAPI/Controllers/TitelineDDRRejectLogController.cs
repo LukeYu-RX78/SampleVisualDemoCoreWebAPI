@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using SampleVisualDemoCoreWebAPI.Interfaces;
 using SampleVisualDemoCoreWebAPI.Models.Entities;
 
 namespace SampleVisualDemoCoreWebAPI.Controllers
@@ -8,111 +8,63 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
     [ApiController]
     public class TitelineDDRRejectLogController : ControllerBase
     {
-        private readonly DorsDbContext _context;
+        private readonly IDDRRejectLogService _service;
 
-        public TitelineDDRRejectLogController(DorsDbContext context)
+        public TitelineDDRRejectLogController(IDDRRejectLogService service)
         {
-            _context = context;
+            _service = service;
         }
 
-        // GET: api/TitelineDDRRejectLog
         [HttpGet]
         public async Task<ActionResult<IEnumerable<DDRRejectLog>>> GetAllLogs()
         {
-            return await _context.DDRRejectLogs.ToListAsync();
+            var logs = await _service.GetAllLogsAsync();
+            return Ok(logs);
         }
 
-        // GET: api/TitelineDDRRejectLog/by-lid/5
         [HttpGet("by-lid/{lid}")]
         public async Task<ActionResult<DDRRejectLog>> GetLogByLid(int lid)
         {
-            var log = await _context.DDRRejectLogs.FindAsync(lid);
-            if (log == null)
-                return NotFound();
-            return log;
+            var log = await _service.GetLogByLidAsync(lid);
+            return log == null ? NotFound() : Ok(log);
         }
 
-        // GET: api/TitelineDDRRejectLog/by-pid-and-aid/5/2
         [HttpGet("by-pid-and-aid/{pid}/{aid}")]
         public async Task<ActionResult<DDRRejectLog>> GetLogsByPidAndAid(int pid, int aid)
         {
-            var log = await _context.DDRRejectLogs
-                .Where(l => l.Pid == pid && l.RollBackTo == aid)
-                .OrderByDescending(l => l.Lid)
-                .FirstOrDefaultAsync();
-
-            if (log == null)
-                return NotFound();
-
-            return log;
+            var log = await _service.GetLogByPidAndAidAsync(pid, aid);
+            return log == null ? NotFound() : Ok(log);
         }
 
-        // POST: api/TitelineDDRRejectLog
         [HttpPost]
         public async Task<ActionResult<DDRRejectLog>> AddLog([FromBody] DDRRejectLog log)
         {
-            // Fetch Plod by Pid
-            var plod = await _context.Plods.FindAsync(log.Pid);
-
-            // Extract and assign SendTo as RollBackTo (if numeric)
-            if (plod != null && int.TryParse(plod.SendTo, out int sendToAid))
-            {
-                log.RollBackTo = sendToAid;
-            }
-
-            _context.DDRRejectLogs.Add(log);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction(nameof(GetLogByLid), new { lid = log.Lid }, log);
+            var addedLog = await _service.AddLogAsync(log);
+            return CreatedAtAction(nameof(GetLogByLid), new { lid = addedLog.Lid }, addedLog);
         }
 
-        // POST: api/TitelineDDRRejectLog/batch
         [HttpPost("batch")]
         public async Task<IActionResult> AddLogs([FromBody] List<DDRRejectLog> logs)
         {
             if (logs == null || logs.Count == 0)
                 return BadRequest("Log list is empty.");
 
-            _context.DDRRejectLogs.AddRange(logs);
-            await _context.SaveChangesAsync();
-
+            await _service.AddLogsAsync(logs);
             return Ok("Logs added successfully.");
         }
 
-        // PUT: api/TitelineDDRRejectLog/update-lid/5
         [HttpPut("update-lid/{lid}")]
         public async Task<IActionResult> UpdateLogByLid(int lid, DDRRejectLog updatedLog)
         {
-            if (lid != updatedLog.Lid)
-                return BadRequest("Lid mismatch.");
-
-            _context.Entry(updatedLog).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-                return Ok("Log updated successfully.");
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!_context.DDRRejectLogs.Any(e => e.Lid == lid))
-                    return NotFound();
-                throw;
-            }
+            var result = await _service.UpdateLogByLidAsync(lid, updatedLog);
+            return result ? Ok("Log updated successfully.") : NotFound();
         }
 
-        // DELETE: api/TitelineDDRRejectLog/delete-lid/5
         [HttpDelete("delete-lid/{lid}")]
         public async Task<IActionResult> DeleteLogByLid(int lid)
         {
-            var log = await _context.DDRRejectLogs.FindAsync(lid);
-            if (log == null)
-                return NotFound();
-
-            _context.DDRRejectLogs.Remove(log);
-            await _context.SaveChangesAsync();
-
-            return Ok("Log deleted successfully.");
+            var result = await _service.DeleteLogByLidAsync(lid);
+            return result ? Ok("Log deleted successfully.") : NotFound();
         }
     }
 }

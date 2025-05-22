@@ -36,29 +36,38 @@ namespace SampleVisualDemoCoreWebAPI.Services
 
         public async Task<DDRRejectLog> AddLogAsync(DDRRejectLog log)
         {
+            // Auto-fill RollBackTo from Plod.SendTo
             var plod = await _context.Plods.FindAsync(log.Pid);
             if (plod != null && int.TryParse(plod.SendTo, out int sendToAid))
             {
                 log.RollBackTo = sendToAid;
             }
 
+            // Save the rejection log
             _context.DDRRejectLogs.Add(log);
             await _context.SaveChangesAsync();
 
-            /*
-            var reviewer = await _context.AppAccounts.FindAsync(log.RollBackTo);
-            if (reviewer != null)
+            // Fetch reviewer and rejectedBy user
+            var reviewer = await _context.AppAccounts.FindAsync(log.RejectedBy); // the reviewer
+            var rejectedUser = await _context.AppAccounts.FindAsync(log.RollBackTo); // the one receiving the rejection
+
+            if (plod != null && reviewer != null && rejectedUser != null)
             {
                 var emailEvent = new DDRRejectLogCreatedEvent(
                     pid: log.Pid ?? -1,
                     message: log.Message ?? "Reviewer left no feedback :(",
-                    reviewerEmail: reviewer.EmailAddress ?? throw new Exception("Reviewer email is missing.")
+                    reviewerName: reviewer.FirstName ?? "Reviewer",
+                    reviewerEmail: reviewer.EmailAddress ?? "unknown@example.com",
+                    userFirstName: rejectedUser.FirstName ?? "User",
+                    userEmail: rejectedUser.EmailAddress ?? "unknown@example.com",
+                    contractNo: plod.ContractNo ?? "N/A",
+                    rigNo: plod.RigNo ?? "N/A",
+                    plodDate: plod.PlodDate ?? "N/A",
+                    plodShift: plod.PlodShift ?? "N/A",
+                    rejectionDateTime: log.CreationDateTime ?? DateTime.UtcNow.ToString("s")
                 );
-
                 await _eventBus.PublishAsync(emailEvent);
             }
-            */
-
             return log;
         }
 

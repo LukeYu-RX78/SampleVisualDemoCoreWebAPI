@@ -1,34 +1,37 @@
-<!-- /EmailTemplates/RejectionEmailTemplate.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>DDR Rejection Notification</title>
+  <title>DDR Rejection Notice</title>
 </head>
-<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
-  <h2>Daily Drill Report Rejection Notice</h2>
+<body style="font-family: Arial, sans-serif; background-color: #ffffff; padding: 24px; color: #333; font-size: 14px; line-height: 1.6;">
+  <div style="max-width: 600px; margin: auto; border: 1px solid #ddd; border-radius: 8px; padding: 32px;">
+    <p>Hi {UserFirstName},</p>
 
-  <p><strong>Rejected By:</strong> {FirstName} ({AuthorityLv})</p>
-  <p><strong>Email:</strong> {EmailAddress}</p>
+    <p>We noticed that your current Daily Drill Repor:</p>
 
-  <hr />
+    <ul style="font-size: 12px; padding-left: 20px;">
+      <li>Contract No: {ContractNo}</li>
+      <li>Rig No: {RigNo}</li>
+      <li>Plod Date: {PlodDate}</li>
+      <li>Shift: {PlodShift}</li>
+    </ul>
 
-  <p><strong>Report Info:</strong></p>
-  <ul>
-    <li><strong>Contract No:</strong> {ContractNo}</li>
-    <li><strong>Rig No:</strong> {RigNo}</li>
-    <li><strong>Plod Date:</strong> {PlodDate}</li>
-    <li><strong>Shift:</strong> {PlodShift}</li>
-    <li><strong>Current State:</strong> {ReportState}</li>
-  </ul>
+    <p>
+      was rejected by {ReviewerName} (<a href="mailto:{ReviewerEmail}" style="color: #007bff;">{ReviewerEmail}</a>) on {RejectionDateTime}.
+    </p>
 
-  <p><strong>Rejection Reason:</strong></p>
-  <blockquote style="background: #f9f9f9; padding: 10px; border-left: 4px solid #d00;">
-    {Message}
-  </blockquote>
+    <p>Rejection Reason:</p>
+    <blockquote style="background: #f9f9f9; padding: 12px 16px; border-left: 4px solid #ffd666; font-style: italic; font-size: 14px;">
+      {Message}
+    </blockquote>
 
-  <p style="margin-top: 30px;">Please review and make the necessary corrections.</p>
+    <p>Please review and make the necessary corrections, then submit or approve it again.</p>
 
-  <p>Regards,<br />DORS Notification System</p>
+    <p style="margin-top: 24px;">
+      Regards,<br />
+      DORS Notification System
+    </p>
+  </div>
 </body>
 </html>

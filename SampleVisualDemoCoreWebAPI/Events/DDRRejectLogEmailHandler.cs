@@ -1,6 +1,10 @@
+using SampleVisualDemoCoreWebAPI.Events;
 using SampleVisualDemoCoreWebAPI.Infrastructure;
+using SampleVisualDemoCoreWebAPI.Interfaces;
+using System.IO;
+using System.Threading.Tasks;
 
-namespace SampleVisualDemoCoreWebAPI.Events
+namespace SampleVisualDemoCoreWebAPI.EventHandlers
 {
     public class DDRRejectLogEmailHandler : IEventHandler<DDRRejectLogCreatedEvent>
     {
@@ -13,9 +17,28 @@ namespace SampleVisualDemoCoreWebAPI.Events
 
         public async Task HandleAsync(DDRRejectLogCreatedEvent @event)
         {
-            var subject = $"DDR #{@event.Pid} Rejected";
-            var body = $"DDR with ID #{@event.Pid} was rejected.\n\nReason:\n{@event.Message}";
-            await _emailService.SendEmailAsync(@event.ReviewerEmail, subject, body);
+            string templatePath = Path.Combine(Directory.GetCurrentDirectory(), "Templates", "RejectionEmailTemplate.html");
+            if (!File.Exists(templatePath))
+            {
+                throw new FileNotFoundException("Email template not found.", templatePath);
+            }
+
+            string template = await File.ReadAllTextAsync(templatePath);
+
+            string body = template
+                .Replace("{UserFirstName}", @event.UserFirstName)
+                .Replace("{ContractNo}", @event.ContractNo)
+                .Replace("{RigNo}", @event.RigNo)
+                .Replace("{PlodDate}", @event.PlodDate)
+                .Replace("{PlodShift}", @event.PlodShift)
+                .Replace("{ReviewerName}", @event.ReviewerName)
+                .Replace("{ReviewerEmail}", @event.ReviewerEmail)
+                .Replace("{RejectionDateTime}", @event.RejectionDateTime)
+                .Replace("{Message}", @event.Message);
+
+            string subject = "Daily Drill Report Rejection Notice";
+
+            await _emailService.SendEmailAsync(@event.UserEmail, subject, body);
         }
     }
 }

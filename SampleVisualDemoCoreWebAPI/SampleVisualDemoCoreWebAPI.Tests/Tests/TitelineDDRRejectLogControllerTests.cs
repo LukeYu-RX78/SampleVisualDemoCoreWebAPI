@@ -37,29 +37,6 @@ namespace SampleVisualDemoCoreWebAPI.Tests.Tests
                 CreationDateTime = DateTime.UtcNow.ToString("s")
             };
         }
-        
-        [Fact(Skip = "Email event logic is temporarily disabled")]
-        public async Task AddLogAsync_ShouldSaveLog_AndTriggerEvent()
-        {
-            // Arrange
-            var service = GetService(nameof(AddLogAsync_ShouldSaveLog_AndTriggerEvent), out var mockEventBus);
-            var log = CreateSampleLog();
-
-            var context = GetInMemoryDb(nameof(AddLogAsync_ShouldSaveLog_AndTriggerEvent));
-            context.AppAccounts.Add(new AppAccount
-            {
-                Aid = log.RollBackTo ?? -1,
-                EmailAddress = "reviewer@example.com"
-            });
-            await context.SaveChangesAsync();
-
-            // Act
-            var result = await service.AddLogAsync(log);
-
-            // Assert
-            Assert.Equal("Test log", result.Message);
-            mockEventBus.Verify(e => e.PublishAsync(It.IsAny<DDRRejectLogCreatedEvent>()), Times.Once);
-        }
 
         [Fact]
         public async Task GetLogByLidAsync_ShouldReturnLog_WhenExists()

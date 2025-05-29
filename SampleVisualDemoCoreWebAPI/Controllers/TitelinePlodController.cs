@@ -62,7 +62,7 @@ namespace SampleVisualDemoCoreWebAPI.Controllers
 
         [HttpGet]
         [Route("GetStagingPlodsByAid")]
-        public JsonResult GetStagingPlodsByAid(int aid, bool isApproved)
+        public JsonResult GetStagingPlodsByAid(int aid, [FromQuery] bool isApproved = true)
         {
             string query;
 
